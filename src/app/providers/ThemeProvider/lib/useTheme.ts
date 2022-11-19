@@ -1,6 +1,5 @@
-import { Theme } from '../enums/theme';
 import { useContext } from 'react';
-import { LOCAL_STORAGE_THEME_KEY, ThemeContext } from '../theme/ThemeContext';
+import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from './ThemeContext';
 
 interface UseThemeOutput {
 	theme: Theme;
