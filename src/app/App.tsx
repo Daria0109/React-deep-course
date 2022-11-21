@@ -5,13 +5,12 @@ import { AppRouter } from 'app/providers/routerProvider';
 import { Header } from 'widgets/header/ui/Header';
 
 const App = () => {
-	const { theme, toggleTheme } = useTheme();
+	const { theme } = useTheme();
 	
 	return (
 		<div className={classNames('app', {}, [theme])}>
 			<Header />
 			<AppRouter />
-			<button onClick={toggleTheme}>Toggle</button>
 		</div>
 	)
 };

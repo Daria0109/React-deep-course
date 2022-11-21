@@ -3,6 +3,7 @@ import cls from './Header.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink } from 'shared/ui/appLink/AppLink';
 import { AppRoutes } from 'shared/config/appRoutes/appRoutes';
+import { ThemeSwitcher } from 'shared/ui/themeSwitcher/ThemeSwitcher';
 
 interface IOwnProps {
 }
@@ -18,6 +19,7 @@ export const Header: FC<IOwnProps> = (): JSX.Element => {
 						<AppLink to={AppRoutes.ABOUT}>About</AppLink>
 					</ul>
 				</nav>
+				<ThemeSwitcher />
 			</div>
 		</header>
 	);
