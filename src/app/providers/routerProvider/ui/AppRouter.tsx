@@ -7,7 +7,9 @@ export const AppRouter = () => {
 	
 	return (
 		<Suspense fallback={<div>Loading...</div>}>
-			{routes}
+			<div className="page-wrapper">
+				{routes}
+			</div>
 		</Suspense>
 	);
 }
