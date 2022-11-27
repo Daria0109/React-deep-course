@@ -1,7 +1,13 @@
+// noinspection AllyJsxUnregisteredKeyInspection
+
+import { useTranslation } from 'react-i18next';
+
 const HomePage = (): JSX.Element => {
+	const { t } = useTranslation('home');
+	
 	return (
 		<div>
-			Home Page
+			{t('home')}
 		</div>
 	)
 }
