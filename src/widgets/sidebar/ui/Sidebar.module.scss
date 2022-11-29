@@ -1,25 +1,24 @@
 .sidebar {
-  border: 1px solid #cccccc;
-  height: calc(100vh - var(--header-height));
-  width: var(--sidebar-width);
-  background-color: var(--bg-color);
-  position: relative;
-  transition: width 0.3s;
+    border: 1px solid #ccc;
+    height: calc(100vh - var(--header-height));
+    width: var(--sidebar-width);
+    background-color: var(--bg-color);
+    position: relative;
+    transition: width 0.3s;
 
-  &.collapsed {
-    width: var(--sidebar-width-collapsed);
-  }
-
-  & .switchers {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-
-    & .langSwitcher {
-      margin-left: 20px;
+    &.collapsed {
+        width: var(--sidebar-width-collapsed);
     }
-  }
 
+    & .switchers {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        & .langSwitcher {
+            margin-left: 20px;
+        }
+    }
 }

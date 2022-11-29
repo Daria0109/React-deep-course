@@ -1,32 +1,29 @@
 .header {
-  width: 100%;
-  padding: 24px;
-  min-height: var(--header-height);
-  display: flex;
-  align-items: center;
-
-  & .content {
-    max-width: var(--desktop-width);
     width: 100%;
-    margin: 0 auto;
+    padding: 24px;
+    min-height: var(--header-height);
     display: flex;
     align-items: center;
-    justify-content: space-between;
 
-    & .logo {
-      width: 50px;
-      height: 30px;
-      background-color: #cccccc;
+    & .content {
+        max-width: var(--desktop-width);
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & .logo {
+            width: 50px;
+            height: 30px;
+            background-color: #ccc;
+        }
+
+        & .navList {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
     }
-
-    & .navList {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
-
-  }
-
-
 }
