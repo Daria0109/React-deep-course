@@ -7,14 +7,14 @@ interface IOwnProps extends NavLinkProps {
 }
 
 export const AppLink: FC<IOwnProps> = (props): JSX.Element => {
-    const { to, children, ...otherProps } = props;
+	const { to, children, ...otherProps } = props;
 
-    return (
-        <li>
-            <NavLink {...otherProps} to={to} className={classNames(cls.navLink)}>
-                {children}
-            </NavLink>
-        </li>
+	return (
+		<li>
+			<NavLink {...otherProps} to={to} className={classNames(cls.navLink)}>
+				{children}
+			</NavLink>
+		</li>
 
-    );
+	);
 };

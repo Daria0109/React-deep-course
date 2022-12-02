@@ -6,11 +6,11 @@ import ThemeIcon from '../../assets/icons/theme.svg';
 import cls from './ThemeSwitcher.module.scss';
 
 export const ThemeSwitcher: FC = (): JSX.Element => {
-    const { toggleTheme } = useTheme();
+	const { toggleTheme } = useTheme();
 
-    return (
-        <Button onClick={toggleTheme} theme={ThemeButton.CLEAR}>
-            <ThemeIcon className={classNames(cls.themeIcon)} />
-        </Button>
-    );
+	return (
+		<Button onClick={toggleTheme} theme={ThemeButton.CLEAR}>
+			<ThemeIcon className={classNames(cls.themeIcon)} />
+		</Button>
+	);
 };

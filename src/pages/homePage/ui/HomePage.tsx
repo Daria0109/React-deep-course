@@ -3,13 +3,13 @@
 import { useTranslation } from 'react-i18next';
 
 function HomePage(): JSX.Element {
-    const { t } = useTranslation('home');
+	const { t } = useTranslation('home');
 
-    return (
-        <div>
-            {t('home')}
-        </div>
-    );
+	return (
+		<div>
+			{t('home')}
+		</div>
+	);
 }
 
 export default HomePage;

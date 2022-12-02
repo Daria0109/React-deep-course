@@ -9,18 +9,21 @@ interface IOwnProps {
 }
 
 export const Sidebar: FC<IOwnProps> = (): JSX.Element => {
-    const [collapsed, setCollapsed] = useState(false);
+	const [collapsed, setCollapsed] = useState(false);
 
-    const onToggle = () => setCollapsed((prev) => !prev);
+	const onToggle = () => setCollapsed((prev) => !prev);
 
-    return (
-        <div className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [])}>
-            <Button onClick={onToggle}>Toggle</Button>
-            <div className={classNames(cls.switchers)}>
-                <ThemeSwitcher />
-                <LangSwitcher className={cls.langSwitcher} />
-            </div>
+	return (
+		<div className={classNames(
+			cls.sidebar, { [cls.collapsed]: collapsed }, []
+		)}
+		>
+			<Button onClick={onToggle}>Toggle</Button>
+			<div className={classNames(cls.switchers)}>
+				<ThemeSwitcher />
+				<LangSwitcher className={cls.langSwitcher} />
+			</div>
 
-        </div>
-    );
+		</div>
+	);
 };

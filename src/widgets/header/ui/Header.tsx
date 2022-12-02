@@ -9,19 +9,19 @@ interface IOwnProps {
 }
 
 export const Header: FC<IOwnProps> = (): JSX.Element => {
-    const { t } = useTranslation();
+	const { t } = useTranslation();
 
-    return (
-        <header className={classNames(cls.header)}>
-            <div className={classNames(cls.content)}>
-                <div className={classNames(cls.logo)} />
-                <nav>
-                    <ul className={classNames(cls.navList)}>
-                        <AppLink to={AppRoutes.HOME}>{t('home_nav')}</AppLink>
-                        <AppLink to={AppRoutes.ABOUT}>{t('about_nav')}</AppLink>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-    );
+	return (
+		<header className={classNames(cls.header)}>
+			<div className={classNames(cls.content)}>
+				<div className={classNames(cls.logo)} />
+				<nav>
+					<ul className={classNames(cls.navList)}>
+						<AppLink to={AppRoutes.HOME}>{t('home_nav')}</AppLink>
+						<AppLink to={AppRoutes.ABOUT}>{t('about_nav')}</AppLink>
+					</ul>
+				</nav>
+			</div>
+		</header>
+	);
 };

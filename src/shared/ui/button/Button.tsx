@@ -12,18 +12,20 @@ interface IOwnProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: FC<IOwnProps> = (props): JSX.Element => {
-    const {
-        theme, className, children, ...otherProps
-    } = props;
+	const {
+		theme, className, children, ...otherProps
+	} = props;
 
-    return (
-        <button
-            type="button"
-            className={classNames(cls.button, {}, [className, cls[theme]])}
-            {...otherProps}
-        >
-            {children}
-        </button
-        >
-    );
+	return (
+		<button
+			type="button"
+			className={classNames(
+				cls.button, {}, [className, cls[theme]]
+			)}
+			{...otherProps}
+		>
+			{children}
+		</button
+		>
+	);
 };

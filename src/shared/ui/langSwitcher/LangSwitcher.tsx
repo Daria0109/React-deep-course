@@ -8,20 +8,22 @@ interface IOwnProps {
 }
 
 export const LangSwitcher: FC<IOwnProps> = (props): JSX.Element => {
-    const { className } = props;
-    const { t, i18n } = useTranslation();
+	const { className } = props;
+	const { t, i18n } = useTranslation();
 
-    const toggleLanguage = () => {
-        i18n.changeLanguage(i18n.language === 'en' ? 'be' : 'en');
-    };
+	const toggleLanguage = () => {
+		i18n.changeLanguage(i18n.language === 'en' ? 'be' : 'en');
+	};
 
-    return (
-        <Button
-            theme={ThemeButton.CLEAR}
-            onClick={toggleLanguage}
-            className={classNames('', {}, [className])}
-        >
-            {t('lang')}
-        </Button>
-    );
+	return (
+		<Button
+			theme={ThemeButton.CLEAR}
+			onClick={toggleLanguage}
+			className={classNames(
+				'', {}, [className]
+			)}
+		>
+			{t('lang')}
+		</Button>
+	);
 };
