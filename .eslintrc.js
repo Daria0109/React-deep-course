@@ -68,7 +68,7 @@ module.exports = {
 		'array-bracket-newline': [2, { multiline: true, minItems: 3 }],
 		'eol-last': [2, 'always'],
 		'max-len': [2, { code: 100, ignoreComments: true }],
-		'function-paren-newline': [2, { minItems: 2 }]
+		'function-paren-newline': 0
 	},
 	globals: {
 		__IS_DEV__: true,
