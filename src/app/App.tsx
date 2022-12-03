@@ -6,7 +6,7 @@ import { AppRouter } from 'app/providers/routerProvider';
 import { Header } from 'widgets/header/ui/Header';
 import { Sidebar } from 'widgets/sidebar';
 
-function App() {
+function App(): JSX.Element {
 	const { theme } = useTheme();
 
 	return (

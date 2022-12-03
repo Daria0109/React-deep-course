@@ -5,10 +5,7 @@ import { AppRoutes } from 'shared/config/appRoutes/appRoutes';
 import { useTranslation } from 'react-i18next';
 import cls from './Header.module.scss';
 
-interface IOwnProps {
-}
-
-export const Header: FC<IOwnProps> = (): JSX.Element => {
+export const Header: FC = (): JSX.Element => {
 	const { t } = useTranslation();
 
 	return (

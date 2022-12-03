@@ -11,7 +11,7 @@ export const LangSwitcher: FC<IOwnProps> = (props): JSX.Element => {
 	const { className } = props;
 	const { t, i18n } = useTranslation();
 
-	const toggleLanguage = () => {
+	const toggleLanguage = (): void => {
 		i18n.changeLanguage(i18n.language === 'en' ? 'be' : 'en');
 	};
 

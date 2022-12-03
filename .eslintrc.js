@@ -23,6 +23,75 @@ module.exports = {
 		'i18next'
 	],
 	rules: {
+		'@typescript-eslint/no-unused-vars': 1,
+		'@typescript-eslint/padding-line-between-statements': [
+			1,
+			{
+				blankLine: 'always',
+				prev: [
+					'class',
+					'const',
+					'debugger',
+					'export',
+					'import',
+					'interface',
+					'let',
+					'var'
+				],
+				next: '*'
+			},
+			{
+				blankLine: 'any',
+				prev: [
+					'const',
+					'let',
+					'var',
+					'import',
+					'export'
+				],
+				next: [
+					'const',
+					'let',
+					'var',
+					'import',
+					'export'
+				]
+			},
+			{
+				blankLine: 'never',
+				prev: ['return'],
+				next: '*'
+			}
+		],
+		'@typescript-eslint/array-type': [2, { default: 'array', readonly: 'array' }],
+		'@typescript-eslint/explicit-function-return-type': 1,
+		'@typescript-eslint/no-duplicate-enum-values': 1,
+		'@typescript-eslint/explicit-member-accessibility': [
+			1,
+			{
+				overrides: {
+					constructors: 'no-public'
+				}
+			}
+		],
+		'@typescript-eslint/member-ordering': [1],
+		'@typescript-eslint/no-empty-interface': [
+			1,
+			{
+				allowSingleExtends: true
+			}
+		],
+		// "@typescript-eslint/prefer-includes": [1],
+		// "@typescript-eslint/prefer-nullish-coalescing": [2],
+		'@typescript-eslint/prefer-optional-chain': [2],
+		// "@typescript-eslint/prefer-readonly": [1],
+		// "@typescript-eslint/prefer-string-starts-ends-with": [1],
+		// "@typescript-eslint/require-array-sort-compare": [1],
+		'@typescript-eslint/sort-type-union-intersection-members': [1],
+		'@typescript-eslint/type-annotation-spacing': [2],
+		'@typescript-eslint/unified-signatures': [1],
+		'react/prop-types': 0,
+		'react/display-name': 1,
 		'react/jsx-indent': [2, 'tab'],
 		'react/jsx-indent-props': [2, 'tab'],
 		'react/jsx-props-no-spreading': 1,
@@ -36,12 +105,12 @@ module.exports = {
 		'react/function-component-definition': 0,
 		'import/no-unresolved': 0,
 		'import/prefer-default-export': 0,
-		'no-unused-vars': 1,
+		'no-unused-vars': 0,
 		'no-tabs': 0,
 		indent: [
 			1, 'tab', { SwitchCase: 1 }
 		],
-		quotes: 1,
+		quotes: ['error', 'single'],
 		'react/require-default-props': 0,
 		'react/react-in-jsx-scope': 0,
 		'no-shadow': 0,
@@ -68,7 +137,23 @@ module.exports = {
 		'array-bracket-newline': [2, { multiline: true, minItems: 3 }],
 		'eol-last': [2, 'always'],
 		'max-len': [2, { code: 100, ignoreComments: true }],
-		'function-paren-newline': 0
+		'function-paren-newline': 0,
+		'no-debugger': 2,
+		'no-console': ['error', { allow: ['warn', 'error'] }],
+		'no-template-curly-in-string': 2,
+		'default-param-last': [2],
+		'padding-line-between-statements': [2, { blankLine: 'always', prev: '*', next: 'return' }],
+		'padded-blocks': [
+			1,
+			{
+				blocks: 'never',
+				classes: 'always',
+				switches: 'never'
+			}
+		],
+		'linebreak-style': [1, 'unix'],
+		semi: [1, 'always'],
+		'no-multiple-empty-lines': [1, { max: 1 }]
 	},
 	globals: {
 		__IS_DEV__: true,
@@ -107,142 +192,5 @@ module.exports = {
 // 	"@typescript-eslint"
 // ],
 // 	"rules": {
-// 	"padding-line-between-statements": "off",
-// 		"@typescript-eslint/padding-line-between-statements": [
-// 		1,
-// 		{
-// 			"blankLine": "always",
-// 			"prev": [
-// 				"class",
-// 				"const",
-// 				"debugger",
-// 				"export",
-// 				"import",
-// 				"interface",
-// 				"let",
-// 				"var"
-// 			],
-// 			"next": "*"
-// 		},
-// 		{
-// 			"blankLine": "any",
-// 			"prev": [
-// 				"const",
-// 				"let",
-// 				"var",
-// 				"import",
-// 				"export"
-// 			],
-// 			"next": [
-// 				"const",
-// 				"let",
-// 				"var",
-// 				"import",
-// 				"export"
-// 			]
-// 		},
-// 		{
-// 			"blankLine": "never",
-// 			"prev": [
-// 				"return"
-// 			],
-// 			"next": "*"
-// 		}
-// 	],
-// 		"lines-between-class-members": [
-// 		1,
-// 		"always"
-// 	],
-// 		"indent": [
-// 		1,
-// 		"tab",
-// 		{
-// 			"SwitchCase": 1
-// 		}
-// 	],
-// 		"padded-blocks": [
-// 		1,
-// 		{
-// 			"blocks": "never",
-// 			"classes": "always",
-// 			"switches": "never"
-// 		}
-// 	],
-// 		"linebreak-style": [
-// 		1,
-// 		"unix"
-// 	],
-// 		"quotes": [
-// 		1,
-// 		"single"
-// 	],
-// 		"semi": [
-// 		1,
-// 		"always"
-// 	],
-// 		"no-multiple-empty-lines": [
-// 		1,
-// 		{
-// 			"max": 1
-// 		}
-// 	],
-// 		"react/prop-types": 0,
-// 		"react/display-name": 1,
-// 		"@typescript-eslint/array-type": [
-// 		2,
-// 		{
-// 			"default": "generic"
-// 		}
-// 	],
-// 		"@typescript-eslint/explicit-member-accessibility": [
-// 		1,
-// 		{
-// 			"overrides": {
-// 				"constructors": "no-public"
-// 			}
-// 		}
-// 	],
-// 		"@typescript-eslint/member-ordering": [
-// 		1
-// 	],
-// 		"@typescript-eslint/no-empty-interface": [
-// 		1,
-// 		{
-// 			"allowSingleExtends": true
-// 		}
-// 	],
-// 		"@typescript-eslint/prefer-includes": [
-// 		1
-// 	],
-// 		"@typescript-eslint/prefer-nullish-coalescing": [
-// 		2
-// 	],
-// 		"@typescript-eslint/prefer-optional-chain": [
-// 		2
-// 	],
-// 		"@typescript-eslint/prefer-readonly": [
-// 		1
-// 	],
-// 		"@typescript-eslint/prefer-string-starts-ends-with": [
-// 		1
-// 	],
-// 		"@typescript-eslint/require-array-sort-compare": [
-// 		1
-// 	],
-// 		"@typescript-eslint/sort-type-union-intersection-members": [
-// 		1
-// 	],
-// 		"@typescript-eslint/type-annotation-spacing": [
-// 		2
-// 	],
-// 		"@typescript-eslint/unified-signatures": [
-// 		1
-// 	],
-// 		"comma-dangle": "error"
-// },
-// 	"settings": {
-// 	"react": {
-// 		"version": "detect"
-// 	}
 // }
 // }

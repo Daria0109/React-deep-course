@@ -5,13 +5,10 @@ import { LangSwitcher } from 'shared/ui/langSwitcher/LangSwitcher';
 import { Button } from 'shared/ui/button/Button';
 import cls from './Sidebar.module.scss';
 
-interface IOwnProps {
-}
-
-export const Sidebar: FC<IOwnProps> = (): JSX.Element => {
+export const Sidebar: FC = (): JSX.Element => {
 	const [collapsed, setCollapsed] = useState(false);
 
-	const onToggle = () => setCollapsed((prev) => !prev);
+	const onToggle = (): void => setCollapsed((prev) => !prev);
 
 	return (
 		<div className={classNames(
