@@ -5,6 +5,8 @@ import { useTheme } from 'app/providers/themeProvider';
 import { AppRouter } from 'app/providers/routerProvider';
 import { Header } from 'widgets/header/ui/Header';
 import { Sidebar } from 'widgets/sidebar';
+import { ErrorBoundary } from 'react-error-boundary';
+import { ErrorFallback } from 'shared/ui/errorFallback/ErrorFallback';
 
 function App(): JSX.Element {
 	const { theme } = useTheme();
@@ -16,10 +18,12 @@ function App(): JSX.Element {
 		>
 			<Suspense fallback="">
 				<Header />
-				<div className="content-page">
-					{/* <Sidebar /> */}
-					<AppRouter />
-				</div>
+				<ErrorBoundary FallbackComponent={ErrorFallback}>
+					<div className="content-page">
+						{/* <Sidebar /> */}
+						<AppRouter />
+					</div>
+				</ErrorBoundary>
 			</Suspense>
 		</div>
 	);
