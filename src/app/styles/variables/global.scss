@@ -9,7 +9,14 @@
 
     // Sizes
     --header-height: 130px;
-    --desktop-width: 1440px;
     --sidebar-width: 300px;
     --sidebar-width-collapsed: 80px;
+
+    // Breakpoints
+    --desktop: 1920px;
+    --laptop: 1440px;
+    --tablet: 1024px;
+    --tablet-s: 768px;
+    --mobile: 414px;
+    --mobile-s: 375px;
 }

@@ -1,7 +1,14 @@
 @import "reset";
+@import "extends";
+@import "mixins";
 @import "theme/default";
 @import "theme/light";
 @import "variables/global";
+
+a.active {
+    font-weight: 600;
+    opacity: 1;
+}
 
 .app {
     font: var(--font-m);

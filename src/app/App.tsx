@@ -17,7 +17,7 @@ function App(): JSX.Element {
 			<Suspense fallback="">
 				<Header />
 				<div className="content-page">
-					<Sidebar />
+					{/* <Sidebar /> */}
 					<AppRouter />
 				</div>
 			</Suspense>

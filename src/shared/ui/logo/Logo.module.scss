@@ -1,0 +1,6 @@
+@import "src/app/styles/mixins";
+
+.logo {
+    width: max-content;
+    @include display-flex(center, center);
+}
