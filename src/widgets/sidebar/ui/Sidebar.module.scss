@@ -1,9 +1,9 @@
 .sidebar {
-    border: 1px solid #CCCCCC;
-    height: calc(100vh - var(--header-height));
-    width: var(--sidebar-width);
-    background-color: var(--bg-color);
     position: relative;
+    border: 1px solid #CCCCCC;
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--header-height));
+    background-color: var(--bg-color);
     transition: width 0.3s;
 
     &.collapsed {

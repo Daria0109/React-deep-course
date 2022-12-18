@@ -15,15 +15,13 @@
     }
 
     &__main {
-        @include display-flex(center, space-between);
-
         gap: 16px;
+        @include display-flex(center, space-between);
     }
     
     &__navList {
-        @include display-flex(center, space-between);
-
         gap: 16px;
         margin-right: 16px;
+        @include display-flex(center, space-between);
     }
 }

@@ -27,7 +27,6 @@ module.exports = {
 		'react/jsx-key': [2, { warnOnDuplicates: true }],
 		'react/jsx-indent': [1, 'tab'],
 		'react/jsx-indent-props': [1, 'tab'],
-		// 'react/jsx-props-no-spreading': 1,
 		'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
 		'react/react-in-jsx-scope': 0,
 		'react/function-component-definition': [2, {
@@ -193,12 +192,7 @@ module.exports = {
 			}
 		}],
 		'@typescript-eslint/no-empty-interface': [2, { allowSingleExtends: true }],
-		// '@typescript-eslint/prefer-includes': 1,
-		// "@typescript-eslint/prefer-nullish-coalescing": [2],
 		'@typescript-eslint/prefer-optional-chain': [2],
-		// "@typescript-eslint/prefer-readonly": [1],
-		// "@typescript-eslint/prefer-string-starts-ends-with": [1],
-		// "@typescript-eslint/require-array-sort-compare": [1],
 		'@typescript-eslint/sort-type-union-intersection-members': [2],
 		'@typescript-eslint/type-annotation-spacing': [1],
 		'@typescript-eslint/unified-signatures': [2],
@@ -216,8 +210,6 @@ module.exports = {
 				format: ['PascalCase']
 			}],
 		'@typescript-eslint/sort-type-constituents': 1
-		// "@typescript-eslint/no-redundant-type-constituents": "warn"
-		// "@typescript-eslint/consistent-type-exports": "warn"
 	},
 	globals: {
 		__IS_DEV__: true,
