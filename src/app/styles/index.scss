@@ -1,9 +1,8 @@
-@import "reset";
-@import "extends";
-@import "mixins";
-@import "theme/default";
-@import "theme/light";
-@import "variables/global";
+@import 'reset';
+@import 'mixins';
+@import 'theme/default';
+@import 'theme/light';
+@import 'variables/global';
 
 a.active {
     font-weight: 600;
