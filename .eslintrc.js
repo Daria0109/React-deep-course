@@ -27,7 +27,7 @@ module.exports = {
 		'react/jsx-key': [2, { warnOnDuplicates: true }],
 		'react/jsx-indent': [1, 'tab'],
 		'react/jsx-indent-props': [1, 'tab'],
-		'react/jsx-props-no-spreading': 1,
+		// 'react/jsx-props-no-spreading': 1,
 		'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
 		'react/react-in-jsx-scope': 0,
 		'react/function-component-definition': [2, {
@@ -69,6 +69,7 @@ module.exports = {
 		}],
 		'react/jsx-closing-bracket-location': 1,
 		'react/no-multi-comp': 2,
+		'react/require-default-props': 0,
 		'react/self-closing-comp': [2, {
 			component: true,
 			html: true
@@ -95,12 +96,14 @@ module.exports = {
 		'no-extra-boolean-cast': 2,
 		'no-extra-semi': 2,
 		'no-case-declarations': 2,
+		'no-underscore-dangle': 0,
 		'no-unsafe-optional-chaining': 2,
-		'no-unused-vars': 1,
+		'no-unused-vars': [1, { argsIgnorePattern: '_' }],
 		'no-duplicate-imports': 2,
 		'no-promise-executor-return': 2,
 		'no-tabs': [2, { allowIndentationTabs: true }],
 		'no-template-curly-in-string': 2,
+		'no-shadow': 0,
 		'block-scoped-var': 2,
 		curly: 1,
 		'default-case': 2,
@@ -144,7 +147,6 @@ module.exports = {
 		}],
 		'i18next/no-literal-string': [2, { markupOnly: true }],
 
-		'@typescript-eslint/no-unused-vars': 1,
 		'@typescript-eslint/padding-line-between-statements': [
 			1,
 			{
@@ -206,8 +208,8 @@ module.exports = {
 			{
 				selector: 'variable',
 				format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
-				leadingUnderscore: 'allow',
-				trailingUnderscore: 'allow'
+				leadingUnderscore: 'allowSingleOrDouble',
+				trailingUnderscore: 'allowSingleOrDouble'
 			},
 			{
 				selector: 'typeLike',

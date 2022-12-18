@@ -11,10 +11,7 @@ export const Sidebar: FC = (): JSX.Element => {
 	const onToggle = (): void => setCollapsed((prev) => !prev);
 
 	return (
-		<div className={classNames(
-			cls.sidebar, { [cls.collapsed]: collapsed }, []
-		)}
-		>
+		<div className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [])}>
 			<Button onClick={onToggle}>Toggle</Button>
 			<div className={classNames(cls.switchers)}>
 				<ThemeSwitcher />

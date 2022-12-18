@@ -19,9 +19,7 @@ export const LangSwitcher: FC<IOwnProps> = (props): JSX.Element => {
 		<Button
 			theme={ThemeButton.CLEAR}
 			onClick={toggleLanguage}
-			className={classNames(
-				'', {}, [className]
-			)}
+			className={classNames('', {}, [className])}
 		>
 			{t('lang')}
 		</Button>

@@ -13,9 +13,7 @@ export const useTheme = (): UseThemeOutput => {
 		const newTheme = theme === Theme.DEFAULT ? Theme.LIGHT : Theme.DEFAULT;
 
 		setTheme(newTheme);
-		localStorage.setItem(
-			LOCAL_STORAGE_THEME_KEY, newTheme
-		);
+		localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
 	};
 
 	return { theme, toggleTheme };

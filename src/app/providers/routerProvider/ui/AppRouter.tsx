@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import { PageLoader } from 'widgets/pageLoader';
 import { routeConfig } from '../lib/RouteConfig';
 
-export function AppRouter(): JSX.Element {
+export const AppRouter = (): JSX.Element => {
 	const routes = useRoutes(Object.values(routeConfig));
 
 	return (
@@ -13,4 +13,4 @@ export function AppRouter(): JSX.Element {
 			</div>
 		</Suspense>
 	);
-}
+};

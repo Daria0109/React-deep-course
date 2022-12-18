@@ -4,18 +4,14 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'app/providers/themeProvider';
 import { AppRouter } from 'app/providers/routerProvider';
 import { Header } from 'widgets/header/ui/Header';
-import { Sidebar } from 'widgets/sidebar';
 import { ErrorBoundary } from 'react-error-boundary';
 import { ErrorFallback } from 'shared/ui/errorFallback/ErrorFallback';
 
-function App(): JSX.Element {
+export const App = (): JSX.Element => {
 	const { theme } = useTheme();
 
 	return (
-		<div className={classNames(
-			'app', {}, [theme]
-		)}
-		>
+		<div className={classNames('app', {}, [theme])}>
 			<Suspense fallback="">
 				<Header />
 				<ErrorBoundary FallbackComponent={ErrorFallback}>
@@ -27,6 +23,4 @@ function App(): JSX.Element {
 			</Suspense>
 		</div>
 	);
-}
-
-export default App;
+};
