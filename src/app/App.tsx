@@ -10,6 +10,8 @@ import { ErrorFallback } from 'shared/ui/errorFallback/ErrorFallback';
 export const App = (): JSX.Element => {
 	const { theme } = useTheme();
 
+	console.log(theme);
+
 	return (
 		<div className={classNames('app', {}, [theme])}>
 			<Suspense fallback="">
