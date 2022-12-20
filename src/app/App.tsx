@@ -12,7 +12,7 @@ export const App = (): JSX.Element => {
 
 	console.log(theme);
 
-	return (
+	      return (
 		<div className={classNames('app', {}, [theme])}>
 			<Suspense fallback="">
 				<Header />
