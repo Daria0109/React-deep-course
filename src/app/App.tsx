@@ -11,11 +11,14 @@ export const App = (): JSX.Element => {
 	const { theme } = useTheme();
 
 	console.log(theme);
+	debugger;
 
-	      return (
+	           return (
+
 		<div className={classNames('app', {}, [theme])}>
 			<Suspense fallback="">
 				<Header />
+
 				<ErrorBoundary FallbackComponent={ErrorFallback}>
 					<div className="content-page">
 						{/* <Sidebar /> */}
@@ -23,6 +26,7 @@ export const App = (): JSX.Element => {
 					</div>
 				</ErrorBoundary>
 			</Suspense>
+
 		</div>
 	);
 };
