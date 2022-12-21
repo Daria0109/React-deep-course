@@ -74,19 +74,8 @@
         "react-i18next": "^11.15.5",
         "react-router-dom": "^6.2.1"
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
     "lint-staged": {
-        "src/**/*.{js,jsx,ts,tsx}": [
-            "npm run lint:ts:fix",
-            "git add"
-        ],
-        "src/**/*.{css,scss}": [
-            "npm run lint:scss:fix",
-            "git add"
-        ]
+        "src/**/*.{js,jsx,ts,tsx}": ["npm run lint:ts:fix"],
+        "src/**/*.{css,scss}": ["npm run lint:scss:fix"]
     }
 }

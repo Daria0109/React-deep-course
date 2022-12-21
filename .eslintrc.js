@@ -76,7 +76,7 @@ module.exports = {
 		'react/style-prop-object': 2,
 		'import/no-unresolved': 0,
 		'import/prefer-default-export': 0,
-		'import/extensions': [1, 'never'],
+		'import/extensions': [1, 'never', { lazy: 'always' }],
 		'import/no-extraneous-dependencies': 0,
 		indent: [1, 'tab', { SwitchCase: 1 }],
 		quotes: [2, 'single'],
@@ -97,7 +97,7 @@ module.exports = {
 		'no-case-declarations': 2,
 		'no-underscore-dangle': 0,
 		'no-unsafe-optional-chaining': 2,
-		'no-unused-vars': [1, { argsIgnorePattern: '_' }],
+		'no-unused-vars': [1, { argsIgnorePattern: '_', varsIgnorePattern: '_' }],
 		'no-duplicate-imports': 2,
 		'no-promise-executor-return': 2,
 		'no-tabs': [2, { allowIndentationTabs: true }],
@@ -211,6 +211,10 @@ module.exports = {
 			}],
 		'@typescript-eslint/sort-type-constituents': 1
 	},
+	overrides: [{
+		files: ['*.test.tsx'],
+		rules: { 'i18next/no-literal-string': 0 }
+	}],
 	globals: {
 		__IS_DEV__: true,
 		JSX: true

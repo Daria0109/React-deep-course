@@ -12,6 +12,7 @@ export const Sidebar: FC = (): JSX.Element => {
 
 	return (
 		<div className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [])}>
+			{/* eslint-disable-next-line i18next/no-literal-string */}
 			<Button onClick={onToggle}>Toggle</Button>
 			<div className={classNames(cls.switchers)}>
 				<ThemeSwitcher />
