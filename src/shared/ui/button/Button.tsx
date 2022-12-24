@@ -12,11 +12,12 @@ interface IOwnProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: FC<IOwnProps> = (props): JSX.Element => {
-	const { theme, className, children } = props;
+	const { theme, className, children, onClick } = props;
 
 	return (
 		<button
 			type="button"
+			onClick={onClick}
 			className={classNames(cls.button, {}, [className, cls[theme]])}
 		>
 			{children}
