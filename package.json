@@ -15,8 +15,8 @@
         "lint:scss:fix": "stylelint \"**/*.scss\" --fix",
         "unit": "jest --config ./config/jest/jest.config.ts",
         "analyze": "npm run build:dev --env analyze",
-        "predeploy": "npm run build:prod",
-        "deploy": "gh-pages -d build:prod"
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
     },
     "author": "",
     "license": "ISC",
