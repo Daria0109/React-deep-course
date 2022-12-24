@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
-    "homepage": "https://Daria0109.github.io/frontend-cafe",
+    "homepage": "https://daria0109.github.io/React-deep-course/",
     "scripts": {
         "dev": "webpack",
         "start": "webpack serve --env port=3000",
