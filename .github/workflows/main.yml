@@ -31,7 +31,6 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v2
         with:
-          name: production-files
           path: ./build
       - name: Deploy to gh-pages
         run: |
