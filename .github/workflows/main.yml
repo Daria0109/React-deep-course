@@ -26,6 +26,8 @@ jobs:
         run: npm run lint:scss
       - name: Unit testing
         run: npm run unit
+      - name: Build production project
+        run: npm run build:prod
       - name: Download artifact
         uses: actions/download-artifact@v2
         with:
