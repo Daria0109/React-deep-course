@@ -56,15 +56,8 @@ jobs:
           path: ./build
 
       - name: Deploy to gh-pages
-        run: |
-          git config --global user.name $user_name
-          git config --global user.email $user_email
-          git remote set-url origin https://${github_token}@github.com/${repository}
-          npm run deploy
-        env:
-          user_name: 'Daria0109'
-          user_email: 'dshnipova@gmail.com'
-          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-          repository: ${{ github.repository }}
-
-
+        uses: peaceiris/actions-gh-pages@v3
+          if: ${{ github.ref == 'refs/heads/master' }}
+          with:
+            github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+            publish_dir: ./build
