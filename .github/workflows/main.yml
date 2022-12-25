@@ -46,7 +46,6 @@ jobs:
     name: Deploy
     needs: build
     runs-on: macos-latest
-    if: github.ref == 'refs/heads/master'
 
     steps:
       - name: Download artifact
@@ -57,7 +56,7 @@ jobs:
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
-          if: ${{ github.ref == 'refs/heads/master' }}
-          with:
-            github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-            publish_dir: ./build
+        if: ${{ github.ref == 'refs/heads/master' }}
+        with:
+          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+          publish_dir: ./build
