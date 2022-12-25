@@ -26,6 +26,11 @@ jobs:
         run: npm run lint:scss
       - name: Unit testing
         run: npm run unit
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+          with:
+            name: production-files
+            path: ./build
       - name: Deploy to gh-pages
         run: |
           git config --global user.name $user_name
