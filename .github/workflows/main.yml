@@ -1,43 +1,59 @@
 name: CI/CD
 run-name: ${{ github.actor }} is deploying the project 🚀
+
 on:
   push:
     branches: [master]
   pull_request:
     branches: [master]
+
 jobs:
-  pipeline:
+  build:
+    name: Testing and building
     runs-on: macos-latest
-    strategy:
-      matrix:
-        node-version: [16.x]
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
       - name: Set up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+
       - name: Install modules
         run: npm install
+
       - name: Linting Typescript
         run: npm run lint:ts
+
       - name: Linting SCSS
         run: npm run lint:scss
+
       - name: Unit testing
         run: npm run unit
+
       - name: Build production project
         run: npm run build:prod
+
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3
         with:
           name: production-files
           path: ./build
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: macos-latest
+
+    steps:
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
           name: production-files
           path: ./build
+
       - name: Deploy to gh-pages
         run: |
           git config --global user.name $user_name
@@ -45,7 +61,7 @@ jobs:
           git remote set-url origin https://${github_token}@github.com/${repository}
           npm run deploy
         env:
-          user_name: 'UserName'
+          user_name: 'user_name'
           user_email: 'user_email@mail.com'
           github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
           repository: ${{ github.repository }}
