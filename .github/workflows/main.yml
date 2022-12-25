@@ -33,8 +33,8 @@ jobs:
           git remote set-url origin https://${github_token}@github.com/${repository}
           npm run deploy
         env:
-          user_name: 'Daria0109'
-          user_email: 'dshnipova@gmail.com'
+          user_name: 'UserName'
+          user_email: 'user_email@mail.com'
           github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
           repository: ${{ github.repository }}
 
