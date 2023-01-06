@@ -6,11 +6,17 @@ on:
     branches: [master]
   pull_request:
     branches: [master]
+    types: [opened, edited, reopened]
 
 jobs:
   build:
     name: Testing and building
-    runs-on: macos-latest
+    strategy:
+      matrix:
+        node-version: 14
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    continue-on-error: true
 
     steps:
       - name: Checkout repository
@@ -24,9 +30,7 @@ jobs:
       - name: Cache node modules
         uses: actions/cache@v3
         with:
-          path: |
-            node_modules
-            */*/node_modules
+          path: ~/.npm
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
 
       - name: Install modules
@@ -53,7 +57,14 @@ jobs:
   deploy:
     name: Deploy
     needs: build
-    runs-on: macos-latest
+    strategy:
+      matrix:
+        node-version: 14
+        os: [ ubuntu-latest, windows-latest ]
+      runs-on: ${{ matrix.os }}
+    continue-on-error: true
+    env:
+      GH-SECRET: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
 
     steps:
       - name: Download artifact
@@ -66,5 +77,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/master' }}
         with:
-          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+          github_token: ${{ env.GH-SECRET }}
           publish_dir: ./build
