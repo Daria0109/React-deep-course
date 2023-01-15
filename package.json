@@ -2,7 +2,7 @@
     "name": "react-deep-course",
     "version": "1.0.0",
     "description": "",
-    "homepage": "https://react-deep-course.vercel.app/",
+    "homepage": ".",
     "main": "index.js",
     "scripts": {
         "dev": "webpack",
