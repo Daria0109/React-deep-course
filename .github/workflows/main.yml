@@ -9,14 +9,12 @@ on:
     types: [opened, edited, reopened]
 
 jobs:
-  build:
+  deployment:
     name: Testing and building
     strategy:
       matrix:
-        node-version: [14.x]
-        os: [ubuntu-latest, windows-latest]
-    runs-on: ${{ matrix.os }}
-    continue-on-error: true
+        node-version: [16.x]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
@@ -36,11 +34,8 @@ jobs:
       - name: Install modules
         run: npm install
 
-      - name: Linting Typescript
-        run: npm run lint:ts
-
-      - name: Linting SCSS
-        run: npm run lint:scss
+      - name: Check linting
+        run: npm run lint
 
       - name: Unit testing
         run: npm run unit
@@ -48,34 +43,12 @@ jobs:
       - name: Build production project
         run: npm run build:prod
 
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v3
+      - name: Deployment to Vercel
+        uses: amondnet/vercel-action@v20
         with:
-          name: production-files
-          path: ./build
-
-  deploy:
-    name: Deploy
-    needs: build
-    strategy:
-      matrix:
-        node-version: [14.x]
-        os: [ ubuntu-latest, windows-latest ]
-    runs-on: ${{ matrix.os }}
-    continue-on-error: true
-    env:
-      GH-SECRET: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: production-files
-          path: ./build
-
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/master' }}
-        with:
-          github_token: ${{ env.GH-SECRET }}
-          publish_dir: ./build
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          github-token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+          vercel-args: '--prod'
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          working-directory: ./
