@@ -11,7 +11,7 @@ export const PageLoader: FC<IOwnProps> = (props): JSX.Element => {
 	const { className } = props;
 
 	return (
-		<div className={classNames(cls.pageLoader, {}, [className])}>
+		<div className={classNames(cls.loader, {}, [className])}>
 			<Loader />
 		</div>
 	);
