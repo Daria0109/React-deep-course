@@ -76,7 +76,7 @@
         "react-router-dom": "^6.2.1"
     },
     "lint-staged": {
-        "src/**/*.{js,jsx,ts,tsx}": [
+        "src/**/*.{ts,tsx}": [
             "npm run lint:ts"
         ],
         "src/**/*.{css,scss}": [

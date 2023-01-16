@@ -6,7 +6,6 @@ const HomePage = (): JSX.Element => {
 	return (
 		<div>
 			{t('home')}
-
 		</div>
 	);
 };
