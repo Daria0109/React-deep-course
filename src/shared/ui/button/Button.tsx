@@ -11,7 +11,7 @@ interface IOwnProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	theme?: ThemeButton;
 }
 
-export const Button: FC<IOwnProps> = (props): JSX.Element => {
+export const Button: FC<IOwnProps> = (props) => {
 	const { theme, className, children, onClick } = props;
 
 	return (
