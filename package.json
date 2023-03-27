@@ -16,7 +16,7 @@
     "unit": "jest --config ./config/jest/jest.config.ts",
     "analyze": "npm run build:dev --env analyze",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "build-storybook": "build-storybook -c ./config/storybook"
+    "storybook:build": "build-storybook -c ./config/storybook"
   },
   "author": "",
   "license": "ISC",
@@ -60,6 +60,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "lint-staged": "^13.1.0",
+    "loki": "^0.31.1",
     "mini-css-extract-plugin": "^2.5.3",
     "postcss-scss": "^4.0.6",
     "react-refresh": "^0.12.0",
@@ -95,5 +96,20 @@
     "src/**/*.{css,scss}": [
       "npm run lint:scss"
     ]
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.app",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.app",
+        "preset": "iPhone 7"
+      }
+    }
   }
 }

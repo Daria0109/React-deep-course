@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/themeProvider/lib/ThemeContext';
+import { ThemeProviderDecorator } from 'shared/config/storybook/ThemeProviderDecorator';
 import { Button, ThemeButton } from './Button';
 
 export default {
@@ -39,4 +39,4 @@ OutlinedLight.args = {
 	children: 'Outlined Light'
 };
 
-OutlinedLight.decorators = [ThemeDecorator(Theme.LIGHT)];
+OutlinedLight.decorators = [ThemeProviderDecorator(Theme.LIGHT)];

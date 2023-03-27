@@ -1,16 +1,16 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Sidebar } from 'widgets/sidebar';
-import { Theme } from 'app/providers/themeProvider/lib/ThemeContext';
+import { Header } from 'widgets/header';
 import { ThemeProviderDecorator } from 'shared/config/storybook/ThemeProviderDecorator';
+import { Theme } from 'app/providers/themeProvider/lib/ThemeContext';
 
 export default {
-	title: 'shared/Sidebar',
-	component: Sidebar,
+	title: 'shared/Header',
+	component: Header,
 	argTypes: { backgroundColor: { control: 'color' } }
-} as ComponentMeta<typeof Sidebar>;
+} as ComponentMeta<typeof Header>;
 
-const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />;
+const Template: ComponentStory<typeof Header> = (args) => <Header {...args} />;
 
 export const PrimaryDark = Template.bind({});
 
