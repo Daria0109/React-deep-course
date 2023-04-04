@@ -1,8 +1,13 @@
 @import 'reset';
 @import 'mixins';
-@import 'theme/default';
-@import 'theme/light';
-@import 'variables/global';
+@import './theme/default';
+@import './theme/light';
+@import './variables/global';
+
+body {
+    font: var(--font-m);
+    color: var(--primary-color);
+}
 
 a.active {
     font-weight: 600;
@@ -10,9 +15,7 @@ a.active {
 }
 
 .app {
-    font: var(--font-m);
     background: var(--bg-color);
-    color: var(--primary-color);
     min-height: 100vh;
 
     & .content-page {

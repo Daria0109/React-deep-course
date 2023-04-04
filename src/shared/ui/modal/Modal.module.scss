@@ -1,0 +1,39 @@
+.modal {
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+
+    &_opened {
+        pointer-events: auto;
+        opacity: 1;
+        z-index: var(--modal-popup);
+    }
+
+    &__overlay {
+        width: 100%;
+        height: 100%;
+        background: rgba(0 0 0 / 40%);
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    }
+
+    &__content {
+        padding: 16px;
+        background: var(--bg-color-revert);
+        color: var(--modal-color);
+        transition: 0.3s transform;
+        transform: scale(0.5);
+        max-width: 60%;
+
+        &_opened {
+            transform: scale(1);
+        }
+
+        &_closing {
+            transform: scale(0);
+        }
+    }
+}

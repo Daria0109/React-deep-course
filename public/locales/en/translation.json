@@ -4,5 +4,6 @@
     "home_nav": "Home",
     "about_nav": "About",
     "lang": "English",
-    "error_fallback_title": "Oops... Something went wrong :("
+    "error_fallback_title": "Oops... Something went wrong :(",
+    "login_button": "Log In"
 }

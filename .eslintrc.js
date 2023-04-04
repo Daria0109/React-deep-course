@@ -194,8 +194,11 @@ module.exports = {
 		'@typescript-eslint/sort-type-constituents': 1
 	},
 	overrides: [{
-		files: ['*.test.tsx'],
-		rules: { 'i18next/no-literal-string': 0 }
+		files: ['*.{test,stories}.tsx'],
+		rules: {
+			'i18next/no-literal-string': 0,
+			'react/jsx-props-no-spreading': 0
+		}
 	}],
 	globals: {
 		__IS_DEV__: true,
