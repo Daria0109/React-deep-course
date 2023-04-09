@@ -1,7 +1,8 @@
 export default {
+	globals: { __IS_DEV__: true },
 	clearMocks: true,
 	testEnvironment: 'jsdom',
-	coveragePathIgnorePatterns: ['/node_modules/'],
+	coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
 	moduleFileExtensions: [
 		'js',
 		'jsx',
@@ -11,9 +12,12 @@ export default {
 		'node'
 	],
 	moduleDirectories: ['node_modules'],
-	moduleNameMapper: { '\\.(s?css)$': 'identity-obj-proxy' },
+	moduleNameMapper: {
+		'\\.(s?css)$': 'identity-obj-proxy',
+		'entities/(.*)': '<rootDir>/src/entities/$1',
+		'shared/(.*)': '<rootDir>/src/shared/$1'
+	},
 	modulePaths: ['<rootDir>src'],
-	preset: 'ts-jest',
 	rootDir: '../../',
 	setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
 	testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)']

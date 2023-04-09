@@ -150,7 +150,7 @@ module.exports = {
 			classes: 'always',
 			switches: 'never'
 		}],
-		'i18next/no-literal-string': [2, { markupOnly: true }],
+		'i18next/no-literal-string': [2, { markupOnly: true, ignoreAttribute: ['data-testid'] }],
 		'@typescript-eslint/padding-line-between-statements': [1, {
 			blankLine: 'always',
 			prev: ['class', 'const', 'debugger', 'export', 'import', 'interface', 'let'],
@@ -199,6 +199,10 @@ module.exports = {
 			'i18next/no-literal-string': 0,
 			'react/jsx-props-no-spreading': 0
 		}
+	},
+	{
+		files: ['src/**/*Slice.ts'],
+		rules: { 'no-param-reassign': ['error', { props: false }] }
 	}],
 	globals: {
 		__IS_DEV__: true,
