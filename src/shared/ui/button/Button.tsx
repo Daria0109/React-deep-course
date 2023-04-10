@@ -10,19 +10,24 @@ export enum ThemeButton {
 interface IOwnProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	className?: string;
 	theme?: ThemeButton;
+	submit?: boolean;
 }
 
-export const Button: FC<IOwnProps> = (props) => {
-	const { theme, className, children, onClick } = props;
-
-	return (
-		<button
-			type="button"
-			onClick={onClick}
-			className={classNames(cls.button, {}, [className, cls[theme]])}
-		>
-			{children}
-		</button
-		>
-	);
-};
+export const Button: FC<IOwnProps> = (
+	{
+		theme,
+		className,
+		children,
+		onClick,
+		submit
+	}
+) => (
+	<button
+		type={submit ? 'submit' : 'button'}
+		onClick={onClick}
+		className={classNames(cls.button, {}, [className, cls[theme]])}
+	>
+		{children}
+	</button
+	>
+);

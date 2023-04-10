@@ -7,15 +7,19 @@ import { Logo } from 'shared/ui/logo/Logo';
 import { ThemeSwitcher } from 'shared/ui/themeSwitcher/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/langSwitcher/LangSwitcher';
 import { Button, ThemeButton } from 'shared/ui/button/Button';
-import { Modal } from 'shared/ui/modal/Modal';
+import { LoginModal } from 'features/authByUsername';
 import cls from './Header.module.scss';
 
 export const Header: FC = (): JSX.Element => {
 	const { t } = useTranslation();
 	const [isAuthModal, setIsAuthModal] = useState(false);
 
-	const onToggleModal = useCallback(() => {
-		setIsAuthModal((prev) => !prev);
+	const onShowModal = useCallback(() => {
+		setIsAuthModal(true);
+	}, []);
+
+	const onCloseModal = useCallback(() => {
+		setIsAuthModal(false);
 	}, []);
 
 	return (
@@ -30,7 +34,7 @@ export const Header: FC = (): JSX.Element => {
 						</ul>
 					</nav>
 					<Button
-						onClick={onToggleModal}
+						onClick={onShowModal}
 						theme={ThemeButton.OUTLINED}
 					>
 						{t('login_button')}
@@ -39,9 +43,7 @@ export const Header: FC = (): JSX.Element => {
 					<LangSwitcher />
 				</div>
 			</div>
-			<Modal isOpen={isAuthModal} onClose={onToggleModal}>
-				{t('Lorem ipsum dolor sit amet.')}
-			</Modal>
+			<LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
 		</header>
 	);
 };
