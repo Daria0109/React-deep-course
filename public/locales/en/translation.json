@@ -5,5 +5,8 @@
     "about_nav": "About",
     "lang": "English",
     "error_fallback_title": "Oops... Something went wrong :(",
-    "login_button": "Log In"
+    "login_button": "Log In",
+    "logout_button": "Log Out",
+    "login_title": "Log in , please",
+    "login_error": "Please, enter correct username and/or password"
 }

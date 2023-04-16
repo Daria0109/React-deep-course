@@ -9,5 +9,7 @@
   "lang": "lang",
   "login_btn": "login_btn",
   "login_button": "login_button",
+  "login_title": "login_title",
+  "logout_button": "logout_button",
   "not_found": "not_found"
 }

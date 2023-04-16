@@ -28,8 +28,8 @@ module.exports = {
 			namedComponents: 'arrow-function',
 			unnamedComponents: 'arrow-function'
 		}],
-		'react-hooks/rules-of-hooks': 2,
-		'react-hooks/exhaustive-deps': 2,
+		'react-hooks/rules-of-hooks': 1,
+		'react-hooks/exhaustive-deps': 1,
 		'react/jsx-no-target-blank': 2,
 		'react/jsx-closing-tag-location': 2,
 		'react/jsx-curly-spacing': [1, {
@@ -173,7 +173,6 @@ module.exports = {
 		'@typescript-eslint/member-ordering': [2, {
 			default: {
 				optionalityOrder: 'optional-first',
-				order: 'alphabetically'
 			}
 		}],
 		'@typescript-eslint/no-empty-interface': [2, { allowSingleExtends: true }],

@@ -11,6 +11,7 @@ interface IOwnProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	className?: string;
 	theme?: ThemeButton;
 	submit?: boolean;
+	disabled?: boolean;
 }
 
 export const Button: FC<IOwnProps> = (
@@ -19,13 +20,19 @@ export const Button: FC<IOwnProps> = (
 		className,
 		children,
 		onClick,
-		submit
+		submit,
+		disabled
 	}
 ) => (
 	<button
 		type={submit ? 'submit' : 'button'}
 		onClick={onClick}
-		className={classNames(cls.button, {}, [className, cls[theme]])}
+		disabled={disabled}
+		className={classNames(
+			cls.button,
+			{ [cls.buttonDisabled]: disabled },
+			[className, cls[theme]]
+		)}
 	>
 		{children}
 	</button

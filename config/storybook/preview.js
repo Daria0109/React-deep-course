@@ -5,6 +5,7 @@ import '../../src/app/styles/index.scss';
 import { Theme } from '../../src/app/providers/themeProvider/lib/ThemeContext';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator';
 import { ThemeProviderDecorator } from '../../src/shared/config/storybook/ThemeProviderDecorator';
+import { TranslationDecorator } from '../../src/shared/config/storybook/TranslationDecorator';
 
 export const parameters = {
 	actions: { argTypesRegex: '^on[A-Z].*' },
@@ -17,6 +18,6 @@ export const parameters = {
 };
 
 addDecorator(StyleDecorator);
-// addDecorator(ThemeDecorator(Theme.DEFAULT));
 addDecorator(RouterDecorator);
+addDecorator(TranslationDecorator);
 addDecorator(ThemeProviderDecorator(Theme.DEFAULT));

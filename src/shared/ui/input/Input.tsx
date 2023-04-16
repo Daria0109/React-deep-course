@@ -36,6 +36,7 @@ export const Input: FC<IOwnProps> = (
 				value={value}
 				onChange={onChangeHandler}
 				className={classNames(cls.input__field, {}, [className])}
+				{...otherProps}
 			/>
 		</div>
 	);

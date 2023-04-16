@@ -1,24 +1,69 @@
-import { FC } from 'react';
+import { FC, FormEvent, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/button/Button';
 import { Input } from 'shared/ui/input/Input';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginByUsername } from 'features/authByUsername/model/services/authByUserName';
+import { Text, TextTheme } from 'shared/ui/text/Text';
 import cls from './LoginForm.module.scss';
+import { loginActions } from '../../model/slice/loginSlice';
+import { selectError, selectIsLoading, selectPassword, selectUsername } from '../../model/selectors/selectLoginState';
 
 interface IOwnProps {
     className?: string;
 }
 
-export const LoginForm: FC<IOwnProps> = (props): JSX.Element => {
+export const LoginForm: FC<IOwnProps> = ({ className }): JSX.Element => {
 	const { t } = useTranslation();
+	const dispatch = useDispatch();
+	const username = useSelector(selectUsername);
+	const password = useSelector(selectPassword);
+	const isLoading = useSelector(selectIsLoading);
+	const error = useSelector(selectError);
 
-	const { className } = props;
+	const onChangeUsername = useCallback((value: string): void => {
+		dispatch(loginActions.setUsername(value));
+	}, [dispatch]);
+
+	const onChangePassword = useCallback((value: string): void => {
+		dispatch(loginActions.setPassword(value));
+	}, [dispatch]);
+
+	const onSubmitLogin = (e: FormEvent<HTMLFormElement>): void => {
+		e.preventDefault();
+
+		dispatch(loginByUsername({ username, password }));
+	};
 
 	return (
-		<form className={classNames(cls.form, {}, [className])}>
-			<Input type="text" className={cls.form__input} />
-			<Input type="text" className={cls.form__input} />
-			<Button submit className={cls.form__login}>{t('login_button')}</Button>
+		<form
+			onSubmit={onSubmitLogin}
+			className={classNames(cls.form, {}, [className])}
+		>
+			<Text title={t('login_title')} />
+			{error ? <Text text={error} theme={TextTheme.ERROR} /> : null}
+			<Input
+				id="username"
+				type="text"
+				value={username}
+				onChange={onChangeUsername}
+				className={cls.form__input}
+			/>
+			<Input
+				id="password"
+				type="text"
+				value={password}
+				onChange={onChangePassword}
+				className={cls.form__input}
+			/>
+			<Button
+				submit
+				disabled={isLoading}
+				className={cls.form__login}
+			>
+				{t('login_button')}
+			</Button>
 		</form>
 	);
 };
