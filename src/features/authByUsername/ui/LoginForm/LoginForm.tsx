@@ -6,21 +6,28 @@ import { Input } from 'shared/ui/input/Input';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginByUsername } from 'features/authByUsername/model/services/authByUserName';
 import { Text, TextTheme } from 'shared/ui/text/Text';
+import { useDynamicModuleLoader } from 'shared/hooks';
+import { ReducersList } from 'shared/hooks/useDynamicModuleLoader/useDynamicModuleLoader';
 import cls from './LoginForm.module.scss';
-import { loginActions } from '../../model/slice/loginSlice';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { selectError, selectIsLoading, selectPassword, selectUsername } from '../../model/selectors/selectLoginState';
 
 interface IOwnProps {
     className?: string;
 }
 
-export const LoginForm: FC<IOwnProps> = ({ className }): JSX.Element => {
+const initialReducers: ReducersList = { login: loginReducer };
+
+const LoginForm: FC<IOwnProps> = ({ className }): JSX.Element => {
 	const { t } = useTranslation();
 	const dispatch = useDispatch();
+
 	const username = useSelector(selectUsername);
 	const password = useSelector(selectPassword);
 	const isLoading = useSelector(selectIsLoading);
 	const error = useSelector(selectError);
+
+	useDynamicModuleLoader(initialReducers, true);
 
 	const onChangeUsername = useCallback((value: string): void => {
 		dispatch(loginActions.setUsername(value));
@@ -67,3 +74,5 @@ export const LoginForm: FC<IOwnProps> = ({ className }): JSX.Element => {
 		</form>
 	);
 };
+
+export default LoginForm;

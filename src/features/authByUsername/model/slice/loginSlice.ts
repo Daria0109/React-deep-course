@@ -5,7 +5,8 @@ import { loginByUsername } from 'features/authByUsername/model/services/authByUs
 const initialState: LoginSchema = {
 	isLoading: false,
 	username: '',
-	password: ''
+	password: '',
+	error: ''
 };
 
 export const loginSlice = createSlice({
