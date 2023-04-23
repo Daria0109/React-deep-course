@@ -6,4 +6,4 @@ export const selectPassword = (state: StateSchema): string => state?.login?.pass
 
 export const selectIsLoading = (state: StateSchema): boolean => state?.login?.isLoading ?? false;
 
-export const selectError = (state: StateSchema): string => state?.login?.error ?? '';
+export const selectError = (state: StateSchema): number => state?.login?.error;

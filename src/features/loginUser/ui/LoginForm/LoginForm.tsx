@@ -4,13 +4,14 @@ import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/button/Button';
 import { Input } from 'shared/ui/input/Input';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginByUsername } from 'features/authByUsername/model/services/authByUserName';
+import { loginByUsername } from 'features/loginUser/model/services/loginUser';
 import { Text, TextTheme } from 'shared/ui/text/Text';
 import { useDynamicModuleLoader } from 'shared/hooks';
 import { ReducersList } from 'shared/hooks/useDynamicModuleLoader/useDynamicModuleLoader';
+import { loginErrors } from 'shared/constants/serverErrors';
 import cls from './LoginForm.module.scss';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
-import { selectError, selectIsLoading, selectPassword, selectUsername } from '../../model/selectors/selectLoginState';
+import { selectError, selectIsLoading, selectPassword, selectUsername } from '../../model/selectors/loginSelectors';
 
 interface IOwnProps {
     className?: string;
@@ -49,7 +50,7 @@ const LoginForm: FC<IOwnProps> = ({ className }): JSX.Element => {
 			className={classNames(cls.form, {}, [className])}
 		>
 			<Text title={t('login_title')} />
-			{error ? <Text text={error} theme={TextTheme.ERROR} /> : null}
+			{error ? <Text text={t(loginErrors[error])} theme={TextTheme.ERROR} /> : null}
 			<Input
 				id="username"
 				type="text"

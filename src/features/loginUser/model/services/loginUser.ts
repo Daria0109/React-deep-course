@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { User, userActions } from 'entities/user';
 import axios from 'axios';
-import i18n from 'shared/config/i18n/i18n';
 import { saveAuthData } from 'entities/user/model/services/authUser';
 
 interface AuthDataParams {
@@ -9,7 +8,7 @@ interface AuthDataParams {
 	password: string;
 }
 
-export const loginByUsername = createAsyncThunk<User, AuthDataParams, { rejectValue: string }>(
+export const loginByUsername = createAsyncThunk<User, AuthDataParams, { rejectValue: number }>(
 	'login/loginByUsername',
 	async (authData, thunkAPI) => {
 		try {
@@ -24,7 +23,7 @@ export const loginByUsername = createAsyncThunk<User, AuthDataParams, { rejectVa
 
 			return response.data;
 		} catch (e) {
-			return thunkAPI.rejectWithValue(i18n.t('login_error'));
+			return thunkAPI.rejectWithValue(403);
 		}
 	}
 );

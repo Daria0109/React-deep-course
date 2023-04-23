@@ -22,5 +22,6 @@ export const useDynamicModuleLoader = (reducers: ReducersList, removeAfterUnmoun
 					.forEach(([key]: ReducersListEntry) => store.reducerManager.remove(key));
 			}
 		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 };

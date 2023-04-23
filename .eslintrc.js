@@ -46,7 +46,7 @@ module.exports = {
 		'react/jsx-no-constructed-context-values': 2,
 		'react/jsx-no-useless-fragment': [1, { allowExpressions: true }],
 		'react/jsx-one-expression-per-line': [2, { allow: 'single-child' }],
-		'react/jsx-props-no-spreading': 1,
+		'react/jsx-props-no-spreading': 0,
 		'react/jsx-tag-spacing': [1, {
 			closingSlash: 'never',
 			beforeSelfClosing: 'always',
@@ -172,7 +172,7 @@ module.exports = {
 		'@typescript-eslint/no-duplicate-enum-values': 2,
 		'@typescript-eslint/member-ordering': [2, {
 			default: {
-				optionalityOrder: 'optional-first',
+				optionalityOrder: 'optional-first'
 			}
 		}],
 		'@typescript-eslint/no-empty-interface': [2, { allowSingleExtends: true }],
@@ -193,10 +193,11 @@ module.exports = {
 		'@typescript-eslint/sort-type-constituents': 1
 	},
 	overrides: [{
-		files: ['*.{test,stories}.tsx'],
+		files: ['*.test.ts', '*.{test,stories}.tsx'],
 		rules: {
 			'i18next/no-literal-string': 0,
-			'react/jsx-props-no-spreading': 0
+			'react/jsx-props-no-spreading': 0,
+			'no-proto': 0
 		}
 	},
 	{
