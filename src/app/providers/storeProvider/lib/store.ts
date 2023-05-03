@@ -1,9 +1,8 @@
 import { AnyAction, configureStore, EnhancedStore, ReducersMapObject } from '@reduxjs/toolkit';
 import { ThunkMiddlewareFor } from '@reduxjs/toolkit/dist/getDefaultMiddleware';
-import { counterReducer } from 'entities/counter';
 import { userReducer } from 'entities/user';
 import { createReducerManager } from 'app/providers/storeProvider/lib/reducerManager';
-import { StateSchema } from '../lib/StateSchema';
+import { StateSchema } from './StateSchema';
 
 export function createReduxStore(
 	initialState?: StateSchema,
@@ -11,7 +10,6 @@ export function createReduxStore(
 ): EnhancedStore<{}, AnyAction, [ThunkMiddlewareFor<{}>]> {
 	const rootReducers: ReducersMapObject<StateSchema> = {
 		...asyncReducers,
-		counter: counterReducer,
 		user: userReducer
 	};
 
@@ -28,3 +26,5 @@ export function createReduxStore(
 
 	return store;
 }
+
+export type AppDispatchType = ReturnType<typeof createReduxStore>['dispatch'];

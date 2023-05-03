@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC } from 'react';
+import { ButtonHTMLAttributes, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
@@ -14,27 +14,26 @@ interface IOwnProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	disabled?: boolean;
 }
 
-export const Button: FC<IOwnProps> = (
-	{
-		theme,
+export const Button = memo((props: IOwnProps) => {
+	const { theme,
 		className,
 		children,
 		onClick,
 		submit,
-		disabled
-	}
-) => (
-	<button
-		type={submit ? 'submit' : 'button'}
-		onClick={onClick}
-		disabled={disabled}
-		className={classNames(
-			cls.button,
-			{ [cls.buttonDisabled]: disabled },
-			[className, cls[theme]]
-		)}
-	>
-		{children}
-	</button
-	>
-);
+		disabled } = props;
+
+	return (
+		<button
+			type={submit ? 'submit' : 'button'}
+			onClick={onClick}
+			disabled={disabled}
+			className={classNames(
+				cls.button,
+				{ [cls.buttonDisabled]: disabled },
+				[className, cls[theme]]
+			)}
+		>
+			{children}
+		</button>
+	);
+});

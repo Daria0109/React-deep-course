@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'app/providers/themeProvider';
 import { Theme } from 'app/providers/themeProvider/lib/ThemeContext';
@@ -12,7 +12,7 @@ interface IOwnProps {
     className?: string;
 }
 
-export const Logo: FC<IOwnProps> = (props): JSX.Element => {
+export const Logo = memo((props: IOwnProps): JSX.Element => {
 	const { className } = props;
 	const { theme } = useTheme();
 
@@ -21,4 +21,4 @@ export const Logo: FC<IOwnProps> = (props): JSX.Element => {
 			{theme === Theme.DEFAULT ? <LogoLight /> : <LogoDark />}
 		</NavLink>
 	);
-};
+});

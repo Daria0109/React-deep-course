@@ -1,4 +1,4 @@
-import React, { FC, InputHTMLAttributes } from 'react';
+import React, { FC, InputHTMLAttributes, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
@@ -12,8 +12,8 @@ interface IOwnProps extends HTMLInputProps {
 	className?: string;
 }
 
-export const Input: FC<IOwnProps> = (
-	{
+export const Input: FC<IOwnProps> = memo((props: IOwnProps): JSX.Element => {
+	const {
 		id,
 		value,
 		onChange,
@@ -21,8 +21,7 @@ export const Input: FC<IOwnProps> = (
 		label,
 		type = 'text',
 		...otherProps
-	}
-): JSX.Element => {
+	} = props;
 	const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		onChange?.(e.target.value);
 	};
@@ -40,4 +39,4 @@ export const Input: FC<IOwnProps> = (
 			/>
 		</div>
 	);
-};
+});

@@ -3,6 +3,7 @@ import { AboutPage } from 'pages/aboutPage';
 import { AppRoutes } from 'shared/config/appRoutes/appRoutes';
 import { HomePage } from 'pages/homePage';
 import { NotFoundPage } from 'pages/notFoundPage';
+import ProfilePage from 'pages/profilePage/ui/ProfilePage';
 
 export const routeConfig: Record<AppRoutes, RouteObject> = {
 	[AppRoutes.HOME]: {
@@ -12,6 +13,10 @@ export const routeConfig: Record<AppRoutes, RouteObject> = {
 	[AppRoutes.ABOUT]: {
 		path: AppRoutes.ABOUT,
 		element: <AboutPage />
+	},
+	[AppRoutes.PROFILE]: {
+		path: AppRoutes.PROFILE,
+		element: <ProfilePage />
 	},
 	[AppRoutes.NOT_FOUND]: {
 		path: AppRoutes.NOT_FOUND,

@@ -1,6 +1,7 @@
 {
   "Decrement": "Decrement",
   "Increment": "Increment",
+  "Profile page": "Profile page",
   "about": "about",
   "about_nav": "about_nav",
   "error_fallback_title": "error_fallback_title",
@@ -12,5 +13,6 @@
   "login_error": "",
   "login_title": "",
   "logout_button": "logout_button",
-  "not_found": "not_found"
+  "not_found": "not_found",
+  "profile_nav": "profile_nav"
 }

@@ -3,6 +3,7 @@
     "loading": "Loading...",
     "home_nav": "Home",
     "about_nav": "About",
+    "profile_nav": "Profile",
     "lang": "English",
     "error_fallback_title": "Oops... Something went wrong :(",
     "login_button": "Log In",

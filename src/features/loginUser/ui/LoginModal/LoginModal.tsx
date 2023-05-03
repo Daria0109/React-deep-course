@@ -15,7 +15,7 @@ export const LoginModal: FC<IOwnProps> = ({ isOpen, onClose }): JSX.Element => (
 		onClose={onClose}
 	>
 		<Suspense fallback={<Loader />}>
-			<LoginFormAsync />
+			<LoginFormAsync onSuccess={onClose} />
 		</Suspense>
 	</Modal>
 );

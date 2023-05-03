@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Text.module.scss';
 
@@ -14,9 +14,13 @@ interface IOwnProps {
 	theme?: TextTheme;
 }
 
-export const Text: FC<IOwnProps> = ({ title, text, theme = TextTheme.PRIMARY, className }): JSX.Element => (
-	<div className={classNames(cls[theme], {}, [className])}>
-		{title && <p className={classNames(cls.title, {})}>{title}</p>}
-		{text && <p className={classNames(cls.text, {})}>{text}</p>}
-	</div>
-);
+export const Text = memo((props: IOwnProps): JSX.Element => {
+	const { title, text, theme = TextTheme.PRIMARY, className } = props;
+
+	return (
+		<div className={classNames(cls[theme], {}, [className])}>
+			{title && <p className={classNames(cls.title, {})}>{title}</p>}
+			{text && <p className={classNames(cls.text, {})}>{text}</p>}
+		</div>
+	);
+});

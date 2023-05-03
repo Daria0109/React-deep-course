@@ -24,7 +24,7 @@ export const WithError = Template.bind({});
 WithError.args = {};
 
 WithError.decorators = [StoreDecorator({
-	login: { username: 'admin', password: '123', error: 'Error has occurred' }
+	login: { username: 'admin', password: '123', error: 403 }
 })];
 
 export const LoadingState = Template.bind({});

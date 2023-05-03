@@ -22,9 +22,9 @@ export function buildPlugins({ paths, isDev, analyze }: BuildOptions): webpack.W
 		plugins.push(new ReactRefreshWebpackPlugin());
 	}
 	
-	// if (analyze) {
+	if (analyze) {
 		plugins.push(new BundleAnalyzerPlugin());
-	// }
+	}
 
 	return plugins;
 }
