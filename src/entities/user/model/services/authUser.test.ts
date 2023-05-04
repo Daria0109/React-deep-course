@@ -30,7 +30,7 @@ describe('AuthUser thunks', () => {
 			JSON.stringify(authData)
 		);
 		expect(dispatch).toHaveBeenCalledTimes(2);
-		expect(JSON.parse(localStorage.getItem(USER_LOCALSTORAGE_KEY))).toEqual(authData);
+		expect(JSON.parse(localStorage.getItem(USER_LOCALSTORAGE_KEY) ?? '')).toEqual(authData);
 	});
 
 	test('Auth data is returned from local storage', async () => {

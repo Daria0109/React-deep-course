@@ -1,4 +1,4 @@
-import { FC, MouseEvent, useEffect, useRef, useState } from 'react';
+import { FC, MouseEvent, MutableRefObject, useEffect, useRef, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/portal/Portal';
 import { useTheme } from 'app/providers/themeProvider';
@@ -26,7 +26,7 @@ export const Modal: FC<IOwnProps> = (
 
 	const [isMounted, setIsMounted] = useState(false);
 	const [isClosing, setIsClosing] = useState(false);
-	const timerRef = useRef<ReturnType<typeof setTimeout>>();
+	const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
 
 	useEffect(() => {
 		if (isOpen) {
@@ -50,7 +50,7 @@ export const Modal: FC<IOwnProps> = (
 		event.stopPropagation();
 	};
 
-	const mods: Record<string, boolean> = {
+	const mods: Record<string, boolean | undefined> = {
 		[cls.modal__content_opened]: isOpen,
 		[cls.modal__content_closing]: isClosing
 	};

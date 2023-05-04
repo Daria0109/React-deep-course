@@ -2,15 +2,15 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'app/providers/themeProvider/lib/ThemeContext';
 import { ThemeProviderDecorator } from 'shared/config/storybook/ThemeProviderDecorator';
-import { Text, TextTheme } from './Text';
+import { TextElement, TextTheme } from './TextElement';
 
 export default {
 	title: 'shared/Text',
-	component: Text,
+	component: TextElement,
 	argTypes: { backgroundColor: { control: 'color' } }
-} as ComponentMeta<typeof Text>;
+} as ComponentMeta<typeof TextElement>;
 
-const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
+const Template: ComponentStory<typeof TextElement> = (args) => <TextElement {...args} />;
 
 export const Primary = Template.bind({});
 

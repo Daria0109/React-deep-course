@@ -5,7 +5,7 @@ import { Button } from 'shared/ui/button/Button';
 import { Input } from 'shared/ui/input/Input';
 import { useSelector } from 'react-redux';
 import { loginByUsername } from 'features/loginUser/model/services/loginUser';
-import { Text, TextTheme } from 'shared/ui/text/Text';
+import { TextElement, TextTheme } from 'shared/ui/text/TextElement';
 import { useDynamicModuleLoader } from 'shared/hooks';
 import { ReducersList } from 'shared/hooks/useDynamicModuleLoader/useDynamicModuleLoader';
 import { loginErrors } from 'shared/constants/serverErrors';
@@ -15,7 +15,7 @@ import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { selectError, selectIsLoading, selectPassword, selectUsername } from '../../model/selectors/loginSelectors';
 
 interface IOwnProps {
-	onSuccess: () => void;
+	onSuccess?: () => void;
     className?: string;
 }
 
@@ -46,7 +46,7 @@ const LoginForm: FC<IOwnProps> = ({ onSuccess, className }): JSX.Element => {
 		const result = await dispatch(loginByUsername({ username, password }));
 
 		if (result.meta.requestStatus === 'fulfilled') {
-			onSuccess();
+			onSuccess?.();
 		}
 	};
 
@@ -55,8 +55,8 @@ const LoginForm: FC<IOwnProps> = ({ onSuccess, className }): JSX.Element => {
 			onSubmit={onSubmitLogin}
 			className={classNames(cls.form, {}, [className])}
 		>
-			<Text title={t('login_title')} />
-			{error ? <Text text={t(loginErrors[error])} theme={TextTheme.ERROR} /> : null}
+			<TextElement title={t('login_title')} />
+			{error ? <TextElement text={t(loginErrors[error])} theme={TextTheme.ERROR} /> : null}
 			<Input
 				id="username"
 				type="text"

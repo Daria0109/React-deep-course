@@ -7,12 +7,12 @@ import 'shared/config/i18n/i18n';
 import { StoreProvider } from 'app/providers/storeProvider';
 
 render(
-	<StoreProvider>
-		<BrowserRouter basename="/">
+	<BrowserRouter basename="/">
+		<StoreProvider>
 			<ThemeProvider>
 				<App />
 			</ThemeProvider>
-		</BrowserRouter>
-	</StoreProvider>,
+		</StoreProvider>
+	</BrowserRouter>,
 	document.getElementById('root')
 );

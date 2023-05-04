@@ -15,7 +15,7 @@ interface IOwnProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = memo((props: IOwnProps) => {
-	const { theme,
+	const { theme = ThemeButton.OUTLINED,
 		className,
 		children,
 		onClick,

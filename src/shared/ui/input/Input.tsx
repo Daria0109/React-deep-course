@@ -12,7 +12,7 @@ interface IOwnProps extends HTMLInputProps {
 	className?: string;
 }
 
-export const Input: FC<IOwnProps> = memo((props: IOwnProps): JSX.Element => {
+export const Input = memo((props: IOwnProps): JSX.Element => {
 	const {
 		id,
 		value,

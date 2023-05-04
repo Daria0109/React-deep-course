@@ -15,5 +15,5 @@ export interface ProfileSchema {
 	readonly: boolean;
 	isLoading: boolean;
 	data?: IUserProfile;
-	error?: string;
+	error?: number;
 }

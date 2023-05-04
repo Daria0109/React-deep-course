@@ -1,4 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/storeProvider';
 import { selectError, selectIsLoading, selectPassword, selectUsername } from './loginSelectors';
 

@@ -5,5 +5,14 @@
     "users": [
         { "id": "1", "username": "admin", "password": "123" }
     ],
-    "profile": { "name": "typicode" }
+    "profile": {
+        "firstname": "Darya",
+        "lastname": "Shnipava",
+        "age": 31,
+        "currency": "USD",
+        "country": "Poland",
+        "city": "Wroclaw",
+        "username": "Darya",
+        "avatar": "https://img.freepik.com/free-photo/portrait-beautiful-blond-caucasian-woman-smiling-looking-happy-camera-posing-summer-dress-against-white-background_176420-50417.jpg?w=1380&t=st=1682668277~exp=1682668877~hmac=a0afed06addd986d4b776776aa8ba7459ee7638d16afc7aad3c568a10e2ed6ea"
+    }
 }

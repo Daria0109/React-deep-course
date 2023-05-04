@@ -92,6 +92,7 @@ module.exports = {
 		'no-extra-boolean-cast': 2,
 		'no-extra-semi': 2,
 		'no-case-declarations': 2,
+		'no-undef': 0,
 		'no-underscore-dangle': 0,
 		'no-unsafe-optional-chaining': 2,
 		'no-unused-vars': [1, {
@@ -206,6 +207,7 @@ module.exports = {
 	}],
 	globals: {
 		__IS_DEV__: true,
+		__API__: true,
 		JSX: true
 	},
 	reportUnusedDisableDirectives: true

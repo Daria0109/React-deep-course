@@ -4,6 +4,6 @@ export const selectUsername = (state: StateSchema): string => state?.login?.user
 
 export const selectPassword = (state: StateSchema): string => state?.login?.password ?? '';
 
-export const selectIsLoading = (state: StateSchema): boolean => state?.login?.isLoading ?? false;
+export const selectIsLoading = (state: StateSchema): boolean => Boolean(state?.login?.isLoading);
 
-export const selectError = (state: StateSchema): number => state?.login?.error;
+export const selectError = (state: StateSchema): number | undefined => state?.login?.error;

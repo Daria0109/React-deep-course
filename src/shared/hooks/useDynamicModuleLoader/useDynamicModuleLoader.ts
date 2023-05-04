@@ -7,19 +7,17 @@ export type ReducersList = {
 	[key in StateSchemaKeys]?: Reducer;
 };
 
-type ReducersListEntry = [StateSchemaKeys, Reducer];
-
 export const useDynamicModuleLoader = (reducers: ReducersList, removeAfterUnmount: boolean): void => {
 	const store = useStore() as ReduxStoreWithManager;
 
 	useEffect(() => {
 		Object.entries(reducers)
-			.forEach(([key, reducer]: ReducersListEntry) => store.reducerManager.add(key, reducer));
+			.forEach(([key, reducer]) => store.reducerManager.add(key as StateSchemaKeys, reducer));
 
 		return (): void => {
 			if (removeAfterUnmount) {
 				Object.entries(reducers)
-					.forEach(([key]: ReducersListEntry) => store.reducerManager.remove(key));
+					.forEach(([key]) => store.reducerManager.remove(key as StateSchemaKeys));
 			}
 		};
 		// eslint-disable-next-line react-hooks/exhaustive-deps
