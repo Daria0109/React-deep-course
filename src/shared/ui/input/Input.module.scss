@@ -1,3 +1,7 @@
 .input {
     background: transparent;
+
+    &_readonly {
+        opacity: 0.7;
+    }
 }

@@ -1,6 +1,14 @@
 {
     "profile": "Профіль карыстальніка",
-    "edit_btn": "Рэдакціраваць",
     "firstname_placeholder": "Ваша імя",
-    "lastname_placeholder": "Ваша фамілія"
+    "lastname_placeholder": "Ваша фамілія",
+    "username_placeholder": "Ваша імя карыстальніка",
+    "age_placeholder": "Ваш узрост",
+    "city_placeholder": "Ваш горад",
+    "avatar_placeholder": "Ссылка на аватар",
+    "incorrect_user_data": "Вы ўвялі няправільныя дадзеныя карыстальніка",
+    "incorrect_age": "Узрост карыстальніка няправільны",
+    "incorrect_country": "Краіна карыстальніка направільная",
+    "no_data": "Вы не ўвялі дадзеныя карыстальніка",
+    "server_error": "Здарылася непрадбачаная памылка на серверы"
 }

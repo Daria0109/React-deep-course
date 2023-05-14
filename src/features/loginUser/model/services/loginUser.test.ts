@@ -7,6 +7,7 @@ describe('LoginUser thunk', () => {
 	const loginData = { username: '123', password: '123' };
 
 	test('Successful login', async () => {
+		// @ts-ignore
 		const thunk = new TestAsyncThunk(loginByUsername);
 
 		thunk.api.post.mockReturnValue(Promise.resolve({ data: userValue }));
@@ -19,6 +20,7 @@ describe('LoginUser thunk', () => {
 	});
 
 	test('Login with error', async () => {
+		// @ts-ignore
 		const thunk = new TestAsyncThunk(loginByUsername);
 
 		thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }));

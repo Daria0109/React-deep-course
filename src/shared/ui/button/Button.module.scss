@@ -19,3 +19,10 @@
     background: none;
     border: 1px solid var(--primary-color);
 }
+
+.filled {
+    padding: 10px 5px;
+    background: var(--bg-color-revert);
+    border: 1px solid var(--bg-color-revert);
+    color: var(--primary-color-revert);
+}

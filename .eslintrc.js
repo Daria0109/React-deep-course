@@ -80,7 +80,7 @@ module.exports = {
 		'array-bracket-newline': [1, 'consistent'],
 		'linebreak-style': [1, 'unix'],
 		'max-len': [1, {
-			code: 120,
+			code: 160,
 			ignoreComments: true,
 			ignoreTrailingComments: true
 		}],
@@ -208,7 +208,8 @@ module.exports = {
 	globals: {
 		__IS_DEV__: true,
 		__API__: true,
-		JSX: true
+		JSX: true,
+		__PROJECT__: true
 	},
 	reportUnusedDisableDirectives: true
 };

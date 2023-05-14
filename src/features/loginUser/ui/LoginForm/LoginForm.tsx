@@ -8,8 +8,8 @@ import { loginByUsername } from 'features/loginUser/model/services/loginUser';
 import { TextElement, TextTheme } from 'shared/ui/text/TextElement';
 import { useDynamicModuleLoader } from 'shared/hooks';
 import { ReducersList } from 'shared/hooks/useDynamicModuleLoader/useDynamicModuleLoader';
-import { loginErrors } from 'shared/constants/serverErrors';
 import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
+import { serverErrors } from 'shared/constants/serverErrors';
 import cls from './LoginForm.module.scss';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { selectError, selectIsLoading, selectPassword, selectUsername } from '../../model/selectors/loginSelectors';
@@ -56,7 +56,7 @@ const LoginForm: FC<IOwnProps> = ({ onSuccess, className }): JSX.Element => {
 			className={classNames(cls.form, {}, [className])}
 		>
 			<TextElement title={t('login_title')} />
-			{error ? <TextElement text={t(loginErrors[error])} theme={TextTheme.ERROR} /> : null}
+			{error ? <TextElement text={t(serverErrors[error])} theme={TextTheme.ERROR} /> : null}
 			<Input
 				id="username"
 				type="text"

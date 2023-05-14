@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { memo } from 'react';
 import { AppLink } from 'shared/ui/appLink/AppLink';
 import { useTranslation } from 'react-i18next';
 import { INavigationItem } from '../../model/items';

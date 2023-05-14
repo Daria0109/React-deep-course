@@ -1,6 +1,14 @@
 {
     "profile": "User profile",
-    "edit_btn": "Edit",
     "firstname_placeholder": "Your firstname",
-    "lastname_placeholder": "Your lastname"
+    "lastname_placeholder": "Your lastname",
+    "username_placeholder": "Your username",
+    "age_placeholder": "Your age",
+    "city_placeholder": "Your city",
+    "avatar_placeholder": "Avatar link",
+    "incorrect_user_data": "Incorrect user data",
+    "incorrect_age": "Incorrect user age",
+    "incorrect_country": "Incorrect user country",
+    "no_data": "You don't provide any user data",
+    "server_error": "Unexpected user error occurred"
 }

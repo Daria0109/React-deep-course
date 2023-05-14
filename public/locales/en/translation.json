@@ -9,5 +9,12 @@
     "login_button": "Log In",
     "logout_button": "Log Out",
     "login_title": "Log in , please",
-    "login_error": "Please, enter correct username and/or password"
+    "login_error": "Please, enter correct username and/or password",
+    "server_error": "Unexpected server error occurred",
+    "request_error_sub": "Please, try again later",
+    "edit_btn": "Edit",
+    "cancel_btn": "Cancel",
+    "save_btn": "Save",
+    "choose_currency": "Choose currency",
+    "choose_country": "Choose country"
 }
