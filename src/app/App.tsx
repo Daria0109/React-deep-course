@@ -4,13 +4,15 @@ import { AppRouter } from 'app/providers/routerProvider';
 import { Header } from 'widgets/header/ui/Header';
 import { ErrorBoundary } from 'react-error-boundary';
 import { ErrorFallback } from 'shared/ui/errorFallback/ErrorFallback';
-import { useDispatch } from 'react-redux';
-import { authDataInit } from 'entities/user';
+import { useDispatch, useSelector } from 'react-redux';
+import { authDataInit, selectUserInitialised } from 'entities/user';
 import { useTheme } from './providers/themeProvider';
 
 export const App = (): JSX.Element => {
 	const { theme } = useTheme();
 	const dispatch = useDispatch();
+
+	const isUserInitialised = useSelector(selectUserInitialised);
 
 	useEffect(() => {
 		dispatch(authDataInit());
@@ -23,7 +25,7 @@ export const App = (): JSX.Element => {
 				<ErrorBoundary FallbackComponent={ErrorFallback}>
 					<div className="content-page">
 						{/* <Sidebar /> */}
-						<AppRouter />
+						{isUserInitialised && <AppRouter />}
 					</div>
 				</ErrorBoundary>
 			</Suspense>
