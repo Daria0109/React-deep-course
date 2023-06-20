@@ -1,7 +1,7 @@
 import { Suspense, useEffect } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppRouter } from 'app/providers/routerProvider';
-import { Header } from 'widgets/header/ui/Header';
+import { HeaderNavigation } from 'widgets/headerNavigation/ui/HeaderNavigation';
 import { ErrorBoundary } from 'react-error-boundary';
 import { ErrorFallback } from 'shared/ui/errorFallback/ErrorFallback';
 import { useDispatch, useSelector } from 'react-redux';
@@ -21,10 +21,9 @@ export const App = (): JSX.Element => {
 	return (
 		<div className={classNames('app', {}, [theme])}>
 			<Suspense fallback="">
-				<Header />
+				<HeaderNavigation />
 				<ErrorBoundary FallbackComponent={ErrorFallback}>
 					<div className="content-page">
-						{/* <Sidebar /> */}
 						{isUserInitialised && <AppRouter />}
 					</div>
 				</ErrorBoundary>

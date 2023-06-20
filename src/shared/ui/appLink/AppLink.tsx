@@ -9,10 +9,10 @@ export const AppLink = memo((props: IOwnProps): JSX.Element => {
 	const { to, children } = props;
 
 	return (
-		<li>
+		<li className={classNames(cls.navItem)}>
 			<NavLink
 				to={to}
-				className={classNames(cls.navLink)}
+				className={classNames(cls.navItem__link)}
 			>
 				{children}
 			</NavLink>

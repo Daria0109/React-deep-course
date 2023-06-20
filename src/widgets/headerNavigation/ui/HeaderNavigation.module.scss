@@ -18,10 +18,4 @@
         gap: 16px;
         @include display-flex(center, space-between);
     }
-    
-    &__navList {
-        gap: 16px;
-        margin-right: 16px;
-        @include display-flex(center, space-between);
-    }
 }

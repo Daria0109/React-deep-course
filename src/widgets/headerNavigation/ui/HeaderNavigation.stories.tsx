@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Header } from 'widgets/header';
+import { Header } from 'widgets/headerNavigation';
 import { ThemeProviderDecorator } from 'shared/config/storybook/ThemeProviderDecorator';
 import { Theme } from 'app/providers/themeProvider/lib/ThemeContext';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';

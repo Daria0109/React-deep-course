@@ -1,24 +1,31 @@
-import { FC, useState } from 'react';
-import { ThemeSwitcher } from 'shared/ui/themeSwitcher/ThemeSwitcher';
+import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { LangSwitcher } from 'shared/ui/langSwitcher/LangSwitcher';
-import { Button } from 'shared/ui/button/Button';
+import { NavigationItemsList } from 'widgets/sidebar/model/items';
+import { NavigationItem } from 'widgets/sidebar/ui/NavigationItem/NavigationItem';
+import { Portal } from 'shared/ui/portal/Portal';
+import { CloseButton } from 'shared/ui/closeButton/CloseButton';
 import cls from './Sidebar.module.scss';
 
-export const Sidebar: FC = (): JSX.Element => {
-	const [collapsed, setCollapsed] = useState(false);
+interface IOwnProps {
+	isOpen: boolean;
+	onClose?: () => void;
+}
 
-	const onToggle = (): void => setCollapsed((prev) => !prev);
+export const Sidebar = memo((props: IOwnProps): JSX.Element => {
+	const { isOpen, onClose } = props;
 
 	return (
-		<div className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [])}>
-			{/* eslint-disable-next-line i18next/no-literal-string */}
-			<Button onClick={onToggle}>Toggle</Button>
-			<div className={classNames(cls.switchers)}>
-				<ThemeSwitcher />
-				<LangSwitcher className={cls.langSwitcher} />
+		<Portal>
+			<div className={classNames(cls.sidebar, { [cls.sidebar_opened]: isOpen })}>
+				<CloseButton onClose={onClose} className={classNames(cls.sidebar__closeButton)} />
+				<nav>
+					<ul className={classNames(cls.sidebar__navList)}>
+						{NavigationItemsList.map((item) => (
+							<NavigationItem key={item.path} item={item} />
+						))}
+					</ul>
+				</nav>
 			</div>
-
-		</div>
+		</Portal>
 	);
-};
+});

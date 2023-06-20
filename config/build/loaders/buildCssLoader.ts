@@ -1,4 +1,5 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { useEffect } from 'react';
 
 export function buildCssLoader(isDev: boolean) {
 	return {
@@ -21,3 +22,5 @@ export function buildCssLoader(isDev: boolean) {
 		]
 	}
 }
+
+

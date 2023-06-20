@@ -1,24 +1,31 @@
-.sidebar {
-    position: relative;
-    border: 1px solid #CCCCCC;
-    width: var(--sidebar-width);
-    height: calc(100vh - var(--header-height));
-    background-color: var(--bg-color);
-    transition: width 0.3s;
+@import 'src/app/styles/mixins';
 
-    &.collapsed {
-        width: var(--sidebar-width-collapsed);
+.sidebar {
+    padding: 32px 16px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #CCCCCC;
+    background-color: var(--bg-color);
+    transform: translateX(100%);
+    transition: transform 0.3s;
+
+    &__closeButton {
+        margin-bottom: 32px;
+        margin-left: auto;
     }
 
-    & .switchers {
-        position: absolute;
-        bottom: 20px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
+    &__navList {
+        gap: 16px;
+        margin-right: 16px;
+        flex-direction: column;
+    }
 
-        & .langSwitcher {
-            margin-left: 20px;
-        }
+    &_opened {
+        transform: translateX(0%);
     }
 }

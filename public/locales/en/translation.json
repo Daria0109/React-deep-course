@@ -4,6 +4,7 @@
     "home_nav": "Home",
     "about_nav": "About",
     "profile_nav": "Profile",
+    "articles_nav": "Articles",
     "lang": "English",
     "error_fallback_title": "Oops... Something went wrong :(",
     "login_button": "Log In",

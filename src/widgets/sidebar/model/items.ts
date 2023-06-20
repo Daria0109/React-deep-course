@@ -19,5 +19,9 @@ export const NavigationItemsList: INavigationItem[] = [
 	{
 		path: AppRoutes.PROFILE,
 		text: 'profile_nav'
+	},
+	{
+		path: AppRoutes.ARTICLES,
+		text: 'articles_nav'
 	}
 ];

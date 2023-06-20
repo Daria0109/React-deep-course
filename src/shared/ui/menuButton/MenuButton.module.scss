@@ -1,0 +1,44 @@
+.menuButton {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 28px;
+        height: 2px;
+        margin-top: -1px;
+        margin-left: -14px;
+        display: block;
+        background-color: var(--primary-color);
+        border-radius: 2px;
+
+        &::after,
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 28px;
+            height: 2px;
+            margin-top: -1px;
+            margin-left: -14px;
+            content: '';
+            transition: 0.3s;
+            display: block;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        &::after {
+            transform: translateY(9px);
+        }
+
+        &::before {
+            transform: translateY(-9px);
+        }
+    }
+}
