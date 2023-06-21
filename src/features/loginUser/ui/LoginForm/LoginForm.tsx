@@ -61,20 +61,20 @@ const LoginForm: FC<IOwnProps> = ({ onSuccess, className }): JSX.Element => {
 				id="username"
 				type="text"
 				value={username}
+				placeholder={t('login_placeholder')}
 				onChange={onChangeUsername}
-				className={cls.form__input}
 			/>
 			<Input
 				id="password"
 				type="text"
 				value={password}
+				placeholder={t('password_placeholder')}
 				onChange={onChangePassword}
-				className={cls.form__input}
 			/>
 			<Button
 				submit
 				disabled={isLoading}
-				className={cls.form__login}
+				className={cls.form__button}
 			>
 				{t('login_button')}
 			</Button>

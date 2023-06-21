@@ -1,17 +1,17 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Header } from 'widgets/headerNavigation';
+import { HeaderNavigation } from 'widgets/headerNavigation';
 import { ThemeProviderDecorator } from 'shared/config/storybook/ThemeProviderDecorator';
 import { Theme } from 'app/providers/themeProvider/lib/ThemeContext';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 
 export default {
-	title: 'shared/Header',
-	component: Header,
+	title: 'shared/HeaderNavigation',
+	component: HeaderNavigation,
 	argTypes: { backgroundColor: { control: 'color' } }
-} as ComponentMeta<typeof Header>;
+} as ComponentMeta<typeof HeaderNavigation>;
 
-const Template: ComponentStory<typeof Header> = (args) => <Header {...args} />;
+const Template: ComponentStory<typeof HeaderNavigation> = (args) => <HeaderNavigation {...args} />;
 
 export const PrimaryDark = Template.bind({});
 

@@ -1,6 +1,15 @@
 .input {
-    background: transparent;
-
+    &__field {
+        font: var(--font-s);
+        display: block;
+        width: 100%;
+        padding: 24px 0 23px;
+        border: none;
+        border-bottom: 1px dotted var(--primary-color-text);
+        color: var(--primary-color-text);
+        outline: none;
+    }
+    
     &_readonly {
         opacity: 0.7;
     }

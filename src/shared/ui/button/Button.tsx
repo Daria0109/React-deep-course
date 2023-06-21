@@ -30,7 +30,7 @@ export const Button = memo((props: IOwnProps) => {
 			disabled={disabled}
 			className={classNames(
 				cls.button,
-				{ [cls.buttonDisabled]: disabled },
+				{ [cls.button_disabled]: disabled },
 				[className, cls[theme]]
 			)}
 		>

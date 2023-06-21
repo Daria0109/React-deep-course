@@ -31,7 +31,7 @@ export const TextElement = memo((props: IOwnProps): JSX.Element => {
 
 	return (
 		<div className={classNames('', mods, [className])}>
-			{title && <p className={classNames(cls.title, {})}>{title}</p>}
+			{title && <h2 className={classNames(cls.title, {})}>{title}</h2>}
 			{text && <p className={classNames(cls.text, {})}>{text}</p>}
 		</div>
 	);

@@ -11,7 +11,7 @@ interface IOwnProps {
 	lazy?: boolean;
 }
 
-const ANIMATION_DELAY = 300;
+const ANIMATION_DELAY = 200;
 
 export const Modal: FC<IOwnProps> = (
 	{
@@ -30,7 +30,9 @@ export const Modal: FC<IOwnProps> = (
 
 	useEffect(() => {
 		if (isOpen) {
-			setIsMounted(true);
+			timerRef.current = setTimeout(() => {
+				setIsMounted(true);
+			}, ANIMATION_DELAY);
 		}
 
 		return () => clearTimeout(timerRef.current);
@@ -51,11 +53,11 @@ export const Modal: FC<IOwnProps> = (
 	};
 
 	const mods: Record<string, boolean | undefined> = {
-		[cls.modal__content_opened]: isOpen,
+		[cls.modal__content_opened]: isMounted,
 		[cls.modal__content_closing]: isClosing
 	};
 
-	if (lazy && !isMounted) {
+	if (lazy && !isOpen) {
 		return null;
 	}
 

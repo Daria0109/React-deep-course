@@ -21,12 +21,12 @@
     }
 
     &__content {
-        padding: 16px;
-        background: var(--bg-color-revert);
-        color: var(--modal-color);
-        transition: 0.3s transform;
-        transform: scale(0.5);
-        max-width: 60%;
+        width: 100%;
+        max-width: 380px;
+        padding: 60px 70px;
+        background: var(--paper-color);
+        transition: transform 0.2s ease-out;
+        transform: scale(0);
 
         &_opened {
             transform: scale(1);

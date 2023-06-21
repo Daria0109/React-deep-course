@@ -2,12 +2,15 @@
     display: flex;
     flex-direction: column;
 
-    &__input {
-        margin-top: 10px;
-    }
-
-    &__login {
+    &__button {
         margin-top: 15px;
         margin-left: auto;
+        color: var(--primary-color-title);
+        border-color: var(--primary-color-title);
+
+        &:hover {
+            color: var(--primary-color);
+            background-color: var(--primary-color-title);
+        }
     }
 }
