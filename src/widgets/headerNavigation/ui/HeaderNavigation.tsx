@@ -3,13 +3,13 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Logo } from 'shared/ui/logo/Logo';
 import { ThemeSwitcher } from 'shared/ui/themeSwitcher/ThemeSwitcher';
-import { LangSwitcher } from 'shared/ui/langSwitcher/LangSwitcher';
 import { Button, ThemeButton } from 'shared/ui/button/Button';
 import { LoginModal } from 'features/loginUser';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeAuthData, selectAuthUserData } from 'entities/user';
 import { MenuButton } from 'shared/ui/menuButton/MenuButton';
 import { Sidebar } from 'widgets/sidebar';
+import { LangSwitcher } from 'entities/language';
 import cls from './HeaderNavigation.module.scss';
 
 export const HeaderNavigation: FC = (): JSX.Element => {

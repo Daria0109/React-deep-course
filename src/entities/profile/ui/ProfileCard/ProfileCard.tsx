@@ -115,12 +115,18 @@ export const ProfileCard = memo((props: IOwnProps): JSX.Element => {
 					readonly={readonly}
 				/>
 				<CurrencySelect
-					value={profile?.currency}
+					value={{
+						value: profile?.currency ?? Currency.USD,
+						label: profile?.currency ?? Currency.USD
+					}}
 					onChange={onChangeCurrency}
 					readonly={readonly}
 				/>
 				<CountrySelect
-					value={profile?.country}
+					value={{
+						value: profile?.country ?? Country.Belarus,
+						label: profile?.country ?? Country.Belarus
+					}}
 					onChange={onChangeCountry}
 					readonly={readonly}
 				/>

@@ -1,12 +1,13 @@
 import { memo, useCallback } from 'react';
-import { Select } from 'shared/ui/select/Select';
+import { ISelectOptions, UserSelect } from 'shared/ui/select/Select';
 import { useTranslation } from 'react-i18next';
 import { Country } from 'entities/country';
+import cls from './CountrySelect.module.scss';
 
-const countryOptions = Object.values(Country).map((value) => ({ value, content: value }));
+const countryOptions = Object.values(Country).map((value) => ({ value, label: value }));
 
 interface IOwnProps {
-	value?: string;
+	value: ISelectOptions;
 	readonly?: boolean;
 	onChange?: (country?: Country) => void;
 }
@@ -20,12 +21,14 @@ export const CountrySelect = memo((props: IOwnProps): JSX.Element => {
 	}, [onChange]);
 
 	return (
-		<Select
+		<UserSelect
+			name="country"
 			label={t('choose_country')}
 			value={value}
 			options={countryOptions}
 			onChange={onChangeCountryHandler}
 			readonly={readonly}
+			className={cls.select}
 		/>
 	);
 });

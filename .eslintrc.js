@@ -86,6 +86,7 @@ module.exports = {
 		}],
 		'no-debugger': 2,
 		'no-console': [1, { allow: ['warn', 'error'] }],
+		'no-nested-ternary': 0,
 		'no-self-compare': 2,
 		'eol-last': [1, 'always'],
 		'no-empty-pattern': 0,
@@ -151,7 +152,7 @@ module.exports = {
 			classes: 'always',
 			switches: 'never'
 		}],
-		'i18next/no-literal-string': [2, { markupOnly: true, ignoreAttribute: ['data-testid'] }],
+		'i18next/no-literal-string': [2, { markupOnly: true, ignoreAttribute: ['data-testid', 'classNamePrefix', 'name', 'menuPlacement'] }],
 		'@typescript-eslint/padding-line-between-statements': [1, {
 			blankLine: 'always',
 			prev: ['class', 'const', 'debugger', 'export', 'import', 'interface', 'let'],

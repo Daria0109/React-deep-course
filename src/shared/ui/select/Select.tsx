@@ -1,45 +1,81 @@
+import { memo } from 'react';
+import Select from 'react-select';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ChangeEvent, memo } from 'react';
 import cls from './Select.module.scss';
 
 export interface ISelectOptions {
 	value: string;
-	content: string;
+	label: string;
 }
 
 interface IOwnProps {
+	name: string;
+	value: ISelectOptions;
 	label?: string;
 	options?: ISelectOptions[];
-	value?: string;
 	readonly?: boolean;
+	isLoading?: boolean;
+	isClearable?: boolean;
+	isSearchable?: boolean;
 	onChange?: (value?: string) => void;
     className?: string;
 }
 
-export const Select = memo((props: IOwnProps): JSX.Element => {
-	const { label, options, value, readonly, onChange, className } = props;
+export const UserSelect = memo((props: IOwnProps): JSX.Element => {
+	const { name, label, options, value, readonly, isLoading, isClearable, isSearchable, onChange, className } = props;
 
-	const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>): void => {
-		onChange?.(e.target.value);
+	const onChangeHandler = (option: ISelectOptions | null): void => {
+		onChange?.(option?.value);
 	};
 
 	return (
-		<div className={classNames(cls.select__wrapper, {}, [className])}>
+		<div>
 			{label && (
 				<span className={cls.select__label}>
 					{label}
 				</span>
 			)}
-			<select
-				className={cls.select}
+
+			<Select
+				name={name}
+				className={classNames('', {}, [className])}
+				classNamePrefix="select"
 				value={value}
+				options={options}
+				isDisabled={readonly}
+				isLoading={isLoading}
+				isClearable={isClearable}
+				isSearchable={isSearchable}
 				onChange={onChangeHandler}
-				disabled={readonly}
-			>
-				{options?.map(({ value, content }) => (
-					<option key={value}>{content}</option>
-				))}
-			</select>
+				menuPlacement="auto"
+				styles={{
+					control: (baseStyles, state) => ({
+						...baseStyles,
+						borderRadius: 'unset',
+						backgroundColor: 'var(--bg-color)',
+						borderColor: state.isFocused ? 'var(--primary-color)' : '#A5A5A5',
+						boxShadow: 'none',
+						cursor: 'pointer'
+					}),
+					menu: (baseStyles) => ({
+						...baseStyles,
+						borderRadius: 'unset',
+						backgroundColor: 'var(--primary-color)'
+					}),
+					singleValue: (baseStyles) => ({
+						...baseStyles,
+						color: 'var(--primary-color)'
+					}),
+					option: (baseStyles, state) => ({
+						...baseStyles,
+						color: state.isSelected ? 'var(--bg-primary)' : 'var(--bg-color)',
+						backgroundColor: state.isFocused
+							? '#A5A5A5'
+							: state.isSelected ? '#2B2B2B' : 'var(--primary-color)',
+						cursor: state.isSelected ? 'default' : 'pointer'
+					})
+				}}
+			/>
 		</div>
 	);
 });

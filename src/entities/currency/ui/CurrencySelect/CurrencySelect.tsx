@@ -1,12 +1,13 @@
 import { memo, useCallback } from 'react';
-import { Select } from 'shared/ui/select/Select';
+import { ISelectOptions, UserSelect } from 'shared/ui/select/Select';
 import { useTranslation } from 'react-i18next';
 import { Currency } from 'entities/currency';
+import cls from './CurrencySelect.module.scss';
 
-const currencyOptions = Object.values(Currency).map((value) => ({ value, content: value }));
+const currencyOptions = Object.values(Currency).map((value) => ({ value, label: value }));
 
 interface IOwnProps {
-	value?: string;
+	value: ISelectOptions;
 	readonly?: boolean;
 	onChange?: (currency?: Currency) => void;
 }
@@ -20,12 +21,14 @@ export const CurrencySelect = memo((props: IOwnProps): JSX.Element => {
 	}, [onChange]);
 
 	return (
-		<Select
+		<UserSelect
+			name="currency"
 			label={t('choose_currency')}
 			value={value}
 			options={currencyOptions}
 			onChange={onChangeCurrencyHandler}
 			readonly={readonly}
+			className={cls.select}
 		/>
 	);
 });
