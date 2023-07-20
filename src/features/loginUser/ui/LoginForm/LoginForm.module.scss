@@ -5,12 +5,12 @@
     &__button {
         margin-top: 15px;
         margin-left: auto;
-        color: var(--primary-color-title);
-        border-color: var(--primary-color-title);
+        color: var(--modal-btn-color);
+        border-color: var(--modal-btn-color);
 
         &:hover {
-            color: var(--primary-color);
-            background-color: var(--primary-color-title);
+            color: var(--modal-btn-hover-color);
+            background-color: var(--modal-btn-color);
         }
     }
 }

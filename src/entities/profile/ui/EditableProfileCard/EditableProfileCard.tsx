@@ -16,6 +16,7 @@ import { TextElement, TextTheme } from 'shared/ui/text/TextElement';
 import { ValidateProfileError } from 'entities/profile/model/types/profile';
 import { useTranslation } from 'react-i18next';
 import { ProfileCard } from '../ProfileCard/ProfileCard';
+import cls from './EditableProfileCard.module.scss';
 
 export const EditableProfileCard = (): JSX.Element => {
 	const { t } = useTranslation('profile');
@@ -68,7 +69,7 @@ export const EditableProfileCard = (): JSX.Element => {
 	}, [dispatch]);
 
 	return (
-		<>
+		<div className={cls.profile}>
 			<ProfilePageHeader />
 			{validationErrors?.map((error) => (
 				<TextElement
@@ -91,6 +92,6 @@ export const EditableProfileCard = (): JSX.Element => {
 				onChangeCountry={onChangeCountry}
 				readonly={readonly}
 			/>
-		</>
+		</div>
 	);
 };

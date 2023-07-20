@@ -10,4 +10,14 @@
         justify-content: space-between;
         column-gap: 12px;
     }
+
+    &__btn {
+        color: var(--modal-btn-color);
+        border-color: var(--modal-btn-color);
+
+        &:hover {
+            color: var(--modal-btn-hover-color);
+            background-color: var(--modal-btn-color);
+        }
+    }
 }

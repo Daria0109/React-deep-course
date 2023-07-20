@@ -41,7 +41,7 @@ export const ProfilePageHeader: FC<IOwnProps> = (props): JSX.Element => {
 					<Button
 						onClick={onEdit}
 						theme={ThemeButton.OUTLINED}
-						className={cls.profileHeader__editBtn}
+						className={cls.profileHeader__btn}
 					>
 						{generalTranslation('edit_btn')}
 					</Button>
@@ -51,12 +51,14 @@ export const ProfilePageHeader: FC<IOwnProps> = (props): JSX.Element => {
 						<Button
 							onClick={onCancelEdit}
 							theme={ThemeButton.OUTLINED}
+							className={cls.profileHeader__btn}
 						>
 							{generalTranslation('cancel_btn')}
 						</Button>
 						<Button
 							onClick={onSave}
 							theme={ThemeButton.FILLED}
+							className={cls.profileHeader__btn}
 						>
 							{generalTranslation('save_btn')}
 						</Button>

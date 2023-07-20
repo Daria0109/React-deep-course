@@ -26,7 +26,6 @@ const ProfilePage: FC<IOwnProps> = ({ className }): JSX.Element => {
 
 	return (
 		<div className={classNames('', {}, [className])}>
-			{t('Profile page')}
 			<EditableProfileCard />
 		</div>
 	);
